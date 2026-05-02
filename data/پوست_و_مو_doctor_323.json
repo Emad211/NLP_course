@@ -1,0 +1,56 @@
+{
+  "doctor_profile": {
+    "doctor_id": "343073",
+    "profile_url": "https://nobat.ir/doctor/%D8%AF%DA%A9%D8%AA%D8%B1-%D8%B2%D9%87%D8%B1%D8%A7-%D8%A8%DB%8C%DA%AF%D9%85-%D9%85%D9%88%D8%B3%D9%88%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86/dr-39438/vs-1",
+    "nice_id": "39438",
+    "name": "دکتر زهرا بیگم موسوی",
+    "specialty": "متخصص بیماری های پوست",
+    "medical_code": "متخصصشماره نظام: ۲۶۵۴۲",
+    "verified": false,
+    "followers_count": null,
+    "reviews_count": 1,
+    "rating_percent": 100.0,
+    "rating_score_5": 5.0,
+    "biography": null,
+    "social_media": {},
+    "phones": [
+      "۰۲۱-۴۷۶۱****",
+      "۰۲۱-۸۸۷۷****",
+      "۰۲۱-۴۷۶۱****",
+      "۰۲۱-۸۸۷۷****"
+    ],
+    "offices": [
+      {
+        "office_id": "335725",
+        "title": "کلینیک پوست بهار",
+        "address": "تهران ابتدای مرزداران از اشرفی اصفهانی، مرکز جراحی محدود بهار، طبقه اول، کلینیک پوست و زیبایی بهار",
+        "description": "روز‌های شنبه از ساعت ۹ تا ۱۲",
+        "phones": [
+          "۰۲۱-۴۷۶۱****"
+        ],
+        "holiday_note": ""
+      },
+      {
+        "office_id": "335521",
+        "title": "کلینیک دکتر دولتی",
+        "address": "تهران خ ولیعصر، نرسیده به میرداماد، کوچه دامن افشار، پ ۴۰، کلینیک دکتر دولتی",
+        "description": "، دوشنبه صبح و چهارشنبه صبح از ۹ تا ۱۲ و عصر ۲ تا ۴ nobat.ir/۳۹۴۳۷",
+        "phones": [
+          "۰۲۱-۸۸۷۷****"
+        ],
+        "holiday_note": ""
+      }
+    ],
+    "schedule": []
+  },
+  "comments": [
+    {
+      "text": "بسیار صبور و با حوصله",
+      "rate": 5.0,
+      "label": 1,
+      "date": "۱۴۰۴/۱۱/۲۲",
+      "like": 0,
+      "dislike": 0
+    }
+  ]
+}

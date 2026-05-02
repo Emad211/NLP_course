@@ -1,0 +1,41 @@
+{
+  "doctor_profile": {
+    "doctor_id": "332752",
+    "profile_url": "https://nobat.ir/32056",
+    "nice_id": "32056",
+    "name": "دکتر امیر ترکمان",
+    "specialty": "متخصص مغز و اعصاب - فلوشیپ نورواینترونشن ، سکته مغزی",
+    "medical_code": "فلوشیپشماره نظام: ۱۲۹۷۰۲",
+    "verified": false,
+    "followers_count": null,
+    "reviews_count": 177,
+    "rating_percent": 96.0,
+    "rating_score_5": 4.8,
+    "biography": null,
+    "social_media": {
+      "instagram": "https://www.instagram.com/dr.amir_torkaman",
+      "whatsapp": "https://wa.me/98910151****"
+    },
+    "phones": [
+      "۰۹۱۰-۱۵۱****",
+      "۰۹۱۰-۱۵۱****",
+      "۰-۹۱۰-۱۵۱****",
+      "۰-۹۱۰-۱۵۱****"
+    ],
+    "offices": [
+      {
+        "office_id": "330939",
+        "title": "مطب زعفرانیه جنب پالادیوم",
+        "address": "تهران زعفرانیه خ مقدس اردبیلی، میدان الف، جنب پالادیوم، نبش کوچه الله وردیان، پلاک ۱۲۰، ساختمان ۱۰۸، طبقه همکف واحد ۲",
+        "description": "یکشنبه و سه شنبه و چهارشنبه‌ها عصر در خدمت مراجعین عزیز هستیم جهت هماهنگی بیشتر تماس بگیرید یا در واتساپ پیغام بگذارید",
+        "phones": [
+          "۰۹۱۰-۱۵۱****",
+          "۰۹۱۰-۱۵۱****"
+        ],
+        "holiday_note": ""
+      }
+    ],
+    "schedule": []
+  },
+  "comments": []
+}

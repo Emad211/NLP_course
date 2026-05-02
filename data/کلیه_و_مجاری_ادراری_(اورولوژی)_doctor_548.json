@@ -1,0 +1,59 @@
+{
+  "doctor_profile": {
+    "doctor_id": "342396",
+    "profile_url": "https://nobat.ir/38937",
+    "nice_id": "38937",
+    "name": "دکتر سیدمحمدعلی مدینه ای",
+    "specialty": "فلوشیپ ارولوژی (کلیه و مجاری ادرار)",
+    "medical_code": "فلوشیپشماره نظام: ۳۰۷۳۶",
+    "verified": false,
+    "followers_count": null,
+    "reviews_count": null,
+    "rating_percent": null,
+    "rating_score_5": null,
+    "biography": null,
+    "social_media": {},
+    "phones": [
+      "۰۲۱-۶۶۴۳****",
+      "۰۲۱-۳۳۱۳****",
+      "۰۲۱-۴۲۱۹****",
+      "۰۲۱-۶۶۴۳****",
+      "۰۲۱-۳۳۱۳****",
+      "۰۲۱-۴۲۱۹****"
+    ],
+    "offices": [
+      {
+        "office_id": "335924",
+        "title": "مطب دکتر سیدمحمدعلی مدینه ای",
+        "address": "تهران بلوار کشاورز تقاطع کارگر جنب داروخانه طلوع طبقه همکف",
+        "description": null,
+        "phones": [
+          "۰۲۱-۶۶۴۳****"
+        ],
+        "holiday_note": ""
+      },
+      {
+        "office_id": "335925",
+        "title": "درمانگاه آوای مهر ولی الله",
+        "address": "تهران اتوبان شهید محلاتی بین پل ری و چهارراه ۱۷ شهریور پلاک ۳۱۲ درمانگاه اوای مهر ولی ا...",
+        "description": "دوشنبه‌ها ساعت ۱۴ الی ۱۵",
+        "phones": [
+          "۰۲۱-۳۳۱۳****"
+        ],
+        "holiday_note": ""
+      },
+      {
+        "office_id": "336312",
+        "title": "کلینیک ارولوژی بیمارستان محب کوثر",
+        "address": "تهران بیمارستان محب کوثر",
+        "description": "شنبه‌ها ساعت ۹ تا ۱۱ صبح",
+        "phones": [
+          "۰۲۱-۴۲۱۹****"
+        ],
+        "holiday_note": ""
+      }
+    ],
+    "schedule": []
+  },
+  "comments": []
+}

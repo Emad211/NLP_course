@@ -1,0 +1,41 @@
+{
+  "doctor_profile": {
+    "doctor_id": "307332",
+    "profile_url": "https://nobat.ir/20129",
+    "nice_id": "20129",
+    "name": "دکتر سیدمحمد گلشنی",
+    "specialty": "متخصص پوست ، مو ، زیبایی",
+    "medical_code": "متخصصشماره نظام: ۲۸۷۹۸",
+    "verified": false,
+    "followers_count": null,
+    "reviews_count": 195,
+    "rating_percent": 94.0,
+    "rating_score_5": 4.7,
+    "biography": null,
+    "social_media": {
+      "instagram": "https://www.instagram.com/doctor_golshani",
+      "whatsapp": "https://wa.me/98993580****"
+    },
+    "phones": [
+      "۰۹۲۰-۱۰۸****",
+      "۰۹۹۳-۵۸۰****",
+      "۰-۹۲۰-۱۰۸****",
+      "۰-۹۹۳-۵۸۰****"
+    ],
+    "offices": [
+      {
+        "office_id": "295157",
+        "title": "مطب دکتر سید محمد گلشنی",
+        "address": "تهران خیابان کامرانیه شمالی (بازدار)، بالاتر از چهارراه فرمانیه، کوچه ناهید پلاک ۷",
+        "description": "ساعات پاسخگویی تلفن شنبه الی پنجشنبه ( ۹:۰۰ الی ۲۰:۰۰ ) ساعات حضور دکتر در مطب یکشنبه ، سه شنبه ، چهارشنبه ( ۱۱:۰۰ الی ۱۳:۰۰ ) پنجشنبه ( ۹:۰۰ الی ۱۲:۰۰ )",
+        "phones": [
+          "۰۹۲۰-۱۰۸****",
+          "۰۹۹۳-۵۸۰****"
+        ],
+        "holiday_note": ""
+      }
+    ],
+    "schedule": []
+  },
+  "comments": []
+}

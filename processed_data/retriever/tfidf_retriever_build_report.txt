@@ -1,0 +1,40 @@
+TF-IDF DOCTOR RETRIEVER — BUILD REPORT
+project_root=C:\Users\Emad Karimi\Desktop\کرالر نوبت
+input_comments_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_for_tfidf_retriever.csv
+doctor_docs_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\retriever\doctor_documents.csv
+keywords_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\retriever\doctor_keywords.csv
+index_joblib=C:\Users\Emad Karimi\Desktop\کرالر نوبت\models\tfidf_doctor_retriever.joblib
+
+rows_total_in_input=66,464
+placeholder_rows_in_input=2,742
+rows_used_for_doctor_corpus=63,722
+doctors_in_corpus=545
+
+tfidf_matrix_shape=545 x 35064
+
+SAMPLE TOP KEYWORDS (top 8 doctors by comments_used)
+doctor_id=304855  name=دکتر مهتاب امینی  comments_used=303  doc_tokens_est=1795
+  top_terms=اذیتم | مرسی | خدمات | کار لیزر | ریزش | امینی | خشکی پوست | مزو | مو | ریزش مو | اگزما | جوش | co | پوست | لک
+
+doctor_id=219073  name=دکتر حسین حاجی تقی  comments_used=294  doc_tokens_est=2022
+  top_terms=ژل زدم | ارپی | جراحیم | aclانجام دادم | mcl | aclانجام | acl | ال | روز گذشته | زانومو | دامنه | زانو | برگشتم | دکتر راضی‌ام | زدم
+
+doctor_id=299975  name=دکتر آرش رنجبر  comments_used=293  doc_tokens_est=1452
+  top_terms=رنجبر | دکتر رنجبر | کلیه | کلیه داشتم | سنگ | سنگ کلیه | جراحی سنگ | پروستات | اختیاری | سنگ داشتم | تومن | مشکل کلیه | ادراری | معرفی مراجعه | ادراری مراجعه
+
+doctor_id=323009  name=دکتر زکیه گنجه ای  comments_used=284  doc_tokens_est=1753
+  top_terms=ریزش | ریزش مو | مو | پوستی | جوش | قارچ | قارچ پوستی | سرعت تشخیص | پوستی خال | درمان برداشتن | لک صورت | لک | خوش‌برخورد دقت | مو مراجعه | جوش‌های پوستی
+
+doctor_id=129838  name=دکتر رضا سنجری  comments_used=271  doc_tokens_est=2053
+  top_terms=کردین | مشکلاتم رفع | دیسک تنگی | تونستم برم | عمل دیسک | نخاعی داشتم | دیسک | نخاعی | تنگی کانال | کانال | جراحی دیسک | کانال نخاعی | انجام بدین | دیسک کمر | قبولش
+
+doctor_id=112601  name=دکتر احمد قمی فر  comments_used=268  doc_tokens_est=1334
+  top_terms=میگرن چشمی | میگرن | نوار عصب | نوار | چشمی | تشخیص میگرن | توهم | الزایمر | فر | حوصله مودب | تومان | آلزایمر | هستن میگرن | میگرن داشتم | سردرد‌های
+
+doctor_id=286398  name=دکتر مهین بشارتی  comments_used=268  doc_tokens_est=1342
+  top_terms=میگرن | میگرن داشتم | ندارم میگرن | داروهای خانم | سردرد | مبتلا | بهترن | هست دیسک | هستند میگرن | لرزش | شدم درد | سلام سردرد | لرزش دست | افسردگی | هستم میگرن
+
+doctor_id=181690  name=دکتر بهروز عظیمی  comments_used=266  doc_tokens_est=1071
+  top_terms=عظیمی | افسردگی | میگرن | میگرن داشتم | ام‌اس | بیماری‌ام اس | صرع | بیماری‌ام | پارکینسون | مغزی | آلزایمر | لرزش | تشنج | مشکل اعصاب | دقیق حاذق
+
+seconds=1.17

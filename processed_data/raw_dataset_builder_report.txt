@@ -1,0 +1,43 @@
+RAW DATASET BUILDER REPORT
+project_root=C:\Users\Emad Karimi\Desktop\کرالر نوبت
+data_dir=C:\Users\Emad Karimi\Desktop\کرالر نوبت\data
+json_files_total=574
+
+========================================================================
+Load status
+========================================================================
+files_loaded=574
+files_failed=0
+
+========================================================================
+Before canonicalization
+========================================================================
+profiles_rows=574
+unique_doctor_ids_in_profiles=569
+comments_rows=67,110
+unique_doctor_ids_in_comments=545
+duplicate_doctor_ids_count=5
+duplicate_profile_rows=5
+
+========================================================================
+After canonicalization
+========================================================================
+doctors_canonical_rows=569
+comments_canonical_rows=66,465
+unique_doctor_ids_in_canonical_comments=545
+
+========================================================================
+Top duplicate doctor_ids (by number of profile files)
+========================================================================
+doctor_id=305350  profile_files=2  chosen_file=ارتوپدی_doctor_142.json
+doctor_id=263705  profile_files=2  chosen_file=ارتوپدی_doctor_123.json
+doctor_id=331387  profile_files=2  chosen_file=ارتوپدی_doctor_162.json
+doctor_id=228021  profile_files=2  chosen_file=ارتوپدی_doctor_152.json
+doctor_id=305568  profile_files=2  chosen_file=ارتوپدی_doctor_158.json
+
+========================================================================
+Outputs
+========================================================================
+doctors_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\doctors_raw_canonical.csv
+comments_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\comments_raw_canonical.csv
+duplicate_doctor_ids_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\duplicate_doctor_ids.csv

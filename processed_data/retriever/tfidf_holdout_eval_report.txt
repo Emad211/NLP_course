@@ -1,0 +1,11 @@
+TF-IDF DOCTOR RETRIEVER — HOLDOUT EVAL REPORT
+input=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_for_tfidf_retriever.csv
+doctors_train_corpus=535
+train_rows=50,960
+test_rows=12,746
+queries_evaluated=12,746
+
+recall@1=0.0236  (301/12,746)
+recall@3=0.0575  (733/12,746)
+recall@5=0.0793  (1,011/12,746)
+recall@10=0.1295  (1,651/12,746)

@@ -1,0 +1,35 @@
+{
+  "doctor_profile": {
+    "doctor_id": "298543",
+    "profile_url": "https://nobat.ir/18495",
+    "nice_id": "18495",
+    "name": "دکتر فریبا سمیعی",
+    "specialty": "متخصص جراحی گوش و حلق و بینی و سرو گردن",
+    "medical_code": "متخصصشماره نظام: ۸۰۷۳۷",
+    "verified": false,
+    "followers_count": null,
+    "reviews_count": null,
+    "rating_percent": null,
+    "rating_score_5": null,
+    "biography": null,
+    "social_media": {},
+    "phones": [
+      "۰۲۱-۲۶۷۰****",
+      "۰۲۱-۲۶۷۰****"
+    ],
+    "offices": [
+      {
+        "office_id": "286077",
+        "title": "آدرس و تلفن مطب دکتر فریبا سمیعی",
+        "address": "تهران شریعتی بین ظفر و میر داماد بالاتر از پمپ بنزین کوچه احمدیه یکم پ ۱۰ واحد ۳",
+        "description": "از ساعت ۹ صبح تا ۸ شب پاسخگو هستیم",
+        "phones": [
+          "۰۲۱-۲۶۷۰****"
+        ],
+        "holiday_note": ""
+      }
+    ],
+    "schedule": []
+  },
+  "comments": []
+}

@@ -1,0 +1,41 @@
+{
+  "doctor_profile": {
+    "doctor_id": "321374",
+    "profile_url": "https://nobat.ir/24298",
+    "nice_id": "24298",
+    "name": "دکتر مسعود عارف نیا",
+    "specialty": "فلوشیپ جراحی کلیه ، مثانه و مجاری ادراری ( اروانکولوژیست )",
+    "medical_code": "فلوشیپشماره نظام: ۱۱۷۶۶۵",
+    "verified": false,
+    "followers_count": null,
+    "reviews_count": null,
+    "rating_percent": null,
+    "rating_score_5": null,
+    "biography": null,
+    "social_media": {
+      "instagram": "https://www.instagram.com/dr.masoud.arefnia",
+      "whatsapp": "https://wa.me/98936607****"
+    },
+    "phones": [
+      "۰۲۱-۳۳۳۲****",
+      "۰۹۳۶-۶۰۷****",
+      "۰۲۱-۳۳۳۲****",
+      "۰-۹۳۶-۶۰۷****"
+    ],
+    "offices": [
+      {
+        "office_id": "310290",
+        "title": "مطب پیروزی",
+        "address": "تهران خیابان پیروزی_بعد از خیابان شکوفه_ واحد ۱۰۱۶_ساختمان پزشکان اندیشه_ طبقه ۴",
+        "description": "شنبه تا چهارشنبه ساعت ۳ تا ۸ بعد از ظهر",
+        "phones": [
+          "۰۲۱-۳۳۳۲****",
+          "۰۹۳۶-۶۰۷****"
+        ],
+        "holiday_note": ""
+      }
+    ],
+    "schedule": []
+  },
+  "comments": []
+}

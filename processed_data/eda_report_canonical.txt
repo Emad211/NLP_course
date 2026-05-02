@@ -1,0 +1,246 @@
+NOBAT DATASET — EDA REPORT (CANONICAL, RAW)
+project_root=C:\Users\Emad Karimi\Desktop\کرالر نوبت
+doctors_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\doctors_raw_canonical.csv
+comments_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\comments_raw_canonical.csv
+
+
+========================================================================
+0) Snapshot
+========================================================================
+doctors_rows=569
+comments_rows=66,465
+unique_doctor_ids_in_doctors=569
+unique_doctor_ids_in_comments=545
+
+========================================================================
+1) Key integrity checks
+========================================================================
+doctors_doctor_id_null=0 (0.0%)
+doctors_doctor_id_duplicate_rows=0 (0.0%)
+comment_doctor_ids_missing_in_doctors=0
+doctors_with_zero_comments=24
+examples_zero_comment_doctors=121611 | 126437 | 202205 | 246203 | 290999 | 295993 | 298543 | 305350 | 307332 | 319185 | 321374 | 321527 | 332752 | 336377 | 337572 | 340300 | 341245 | 342396 | 343016 | 343482
+
+========================================================================
+2) Label & rating consistency
+========================================================================
+label_null=0 (0.0%)
+rate_null=0 (0.0%)
+
+label_distribution:
+  label=Negative count=   2,742 share=   4.1%
+  label=Neutral  count=   8,076 share=  12.2%
+  label=Positive count=  55,647 share=  83.7%
+
+rate_unique_values=[0.0, 2.5, 5.0]
+
+label_x_rate_counts:
+ label  rate_num  count
+    -1       0.0   2742
+     0       2.5   8076
+     1       5.0  55647
+
+========================================================================
+3) Placeholder negative
+========================================================================
+negative_total=2,742
+placeholder_negative_total=2,742
+placeholder_share_of_negative=100.00%
+placeholder_share_of_all=4.13%
+
+========================================================================
+4) Text quality (raw)
+========================================================================
+empty_text=0 (0.0%)
+duplicate_text_rows=22,208 (33.4%)
+very_short_lt3w=21,011 (31.6%)
+
+length_stats_all:
+  char_len: min=5.0 mean=37.2 median=21.0 p90=87.0 max=1264.0
+  word_len: min=1.0 mean=7.6 median=4.0 p90=18.0 max=267.0
+
+length_stats_by_label:
+   label  count  char_mean  char_p90  word_mean  word_p90
+Negative   2742        9.0       9.0       2.00       2.0
+ Neutral   8076       31.2      71.0       6.48      14.0
+Positive  55647       39.5      92.0       8.09      19.0
+
+========================================================================
+5) Duplicate text analysis (top repeated)
+========================================================================
+unique_text_key=44,257
+duplicate_share=33.4%
+
+top_25_repeated_texts_overall:
+  count= 2,743  text='عدم رضایت'
+  count= 1,223  text='بسیار عالی'
+  count= 1,187  text='خوب بود'
+  count=   815  text='عالی بود'
+  count=   631  text='عالی هستن'
+  count=   484  text='عالی بودن'
+  count=   352  text='در حال درمان'
+  count=   341  text='خیلی خوب'
+  count=   305  text='عالی هستند'
+  count=   249  text='خیلی عالی'
+  count=   231  text='تحت درمان'
+  count=   210  text='دکتر خوبی هستن'
+  count=   184  text='بسیار خوب'
+  count=   179  text='خوب بودن'
+  count=   173  text='تحت درمان هستم'
+  count=   168  text='دیسک کمر'
+  count=   148  text='در حال درمان هستم'
+  count=   143  text='عالی عالی'
+  count=   135  text='دکتر خوبی هستند'
+  count=   133  text='دکتر خوبیه'
+  count=   129  text='سنگ کلیه'
+  count=   129  text='تشخیص عالی'
+  count=   129  text='خوب است'
+  count=   127  text='بارداری'
+  count=   118  text='درحال درمان'
+
+top_10_repeated_texts_per_label:
+
+label=Negative total=2,742 unique=1
+  count= 2,742  text='عدم رضایت'
+
+label=Neutral total=8,076 unique=5,565
+  count=   377  text='خوب بود'
+  count=   175  text='در حال درمان'
+  count=   114  text='تحت درمان'
+  count=    89  text='تحت درمان هستم'
+  count=    64  text='در حال درمان هستم'
+  count=    57  text='درحال درمان'
+  count=    49  text='خوب بودن'
+  count=    45  text='بد نبود'
+  count=    43  text='فعلا تحت درمان هستم'
+  count=    42  text='نظری ندارم'
+
+label=Positive total=55,647 unique=39,354
+  count= 1,220  text='بسیار عالی'
+  count=   810  text='خوب بود'
+  count=   807  text='عالی بود'
+  count=   624  text='عالی هستن'
+  count=   480  text='عالی بودن'
+  count=   334  text='خیلی خوب'
+  count=   305  text='عالی هستند'
+  count=   247  text='خیلی عالی'
+  count=   177  text='در حال درمان'
+  count=   176  text='بسیار خوب'
+
+most_cross_doctor_repeated_texts:
+  doctors= 446  count= 2,743  text='عدم رضایت'
+  doctors= 391  count= 1,223  text='بسیار عالی'
+  doctors= 382  count= 1,187  text='خوب بود'
+  doctors= 333  count=   815  text='عالی بود'
+  doctors= 290  count=   484  text='عالی بودن'
+  doctors= 286  count=   631  text='عالی هستن'
+  doctors= 222  count=   341  text='خیلی خوب'
+  doctors= 214  count=   305  text='عالی هستند'
+  doctors= 197  count=   352  text='در حال درمان'
+  doctors= 176  count=   249  text='خیلی عالی'
+  doctors= 165  count=   231  text='تحت درمان'
+  doctors= 147  count=   210  text='دکتر خوبی هستن'
+  doctors= 147  count=   184  text='بسیار خوب'
+  doctors= 141  count=   179  text='خوب بودن'
+  doctors= 124  count=   173  text='تحت درمان هستم'
+  doctors= 113  count=   135  text='دکتر خوبی هستند'
+  doctors= 110  count=   148  text='در حال درمان هستم'
+  doctors= 109  count=   143  text='عالی عالی'
+  doctors= 108  count=   133  text='دکتر خوبیه'
+  doctors= 108  count=   129  text='خوب است'
+
+========================================================================
+6) Comments per doctor
+========================================================================
+doctors_with_any_comment=545
+comments_per_doctor_min=1
+comments_per_doctor_mean=121.95
+comments_per_doctor_median=96.00
+comments_per_doctor_p90=248.00
+comments_per_doctor_max=320
+
+========================================================================
+7) Specialties (raw doctors table)
+========================================================================
+unique_specialties=325
+specialty_null=0 (0.0%)
+
+top_30_specialties:
+  count=  30 share=  5.3% specialty=متخصص پوست و مو
+  count=  25 share=  4.4% specialty=متخصص گوش و حلق و بینی
+  count=  24 share=  4.2% specialty=متخصص زنان و زایمان
+  count=  18 share=  3.2% specialty=متخصص مغز و اعصاب و ستون فقرات
+  count=  12 share=  2.1% specialty=جراح و متخصص گوش و حلق و بینی
+  count=  11 share=  1.9% specialty=متخصص جراحی مغز و اعصاب
+  count=  11 share=  1.9% specialty=متخصص پوست ، مو ، زیبایی و لیزر
+  count=   9 share=  1.6% specialty=متخصص پوست ، مو و زیبایی
+  count=   9 share=  1.6% specialty=متخصص ارتوپدی
+  count=   7 share=  1.2% specialty=جراح و متخصص زنان و زایمان و نازایی
+  count=   6 share=  1.1% specialty=متخصص مغز و اعصاب
+  count=   6 share=  1.1% specialty=جراح و متخصص زنان و زایمان
+  count=   6 share=  1.1% specialty=جراح و متخصص ارتوپدی
+  count=   5 share=  0.9% specialty=متخصص و جراح گوش و حلق و بینی
+  count=   5 share=  0.9% specialty=متخصص جراحی کلیه و مجاری ادراری
+  count=   5 share=  0.9% specialty=متخصص پوست ، مو ، زیبایی
+  count=   5 share=  0.9% specialty=جراح و متخصص زنان ، زایمان و نازایی
+  count=   5 share=  0.9% specialty=متخصص زنان و زایمان و نازایی
+  count=   4 share=  0.7% specialty=فلوشیپ جراحی ستون فقرات
+  count=   4 share=  0.7% specialty=متخصص جراحی استخوان و مفاصل ( ارتوپدی )
+  count=   4 share=  0.7% specialty=متخصص گوش و حلق و بینی و جراحی سر و گردن
+  count=   4 share=  0.7% specialty=متخصص پوست و مو و زیبایی
+  count=   4 share=  0.7% specialty=جراح و متخصص زنان زایمان و نازایی
+  count=   4 share=  0.7% specialty=متخصص مغز و اعصاب ( نورولوژی )
+  count=   4 share=  0.7% specialty=متخصص پوست ، مو و لیزر
+  count=   3 share=  0.5% specialty=متخصص مغز و اعصاب (نورولوژی)
+  count=   3 share=  0.5% specialty=متخصص جراحی مغز و اعصاب و ستون فقرات
+  count=   3 share=  0.5% specialty=متخصص پوست و مو (درماتولوژی)
+  count=   3 share=  0.5% specialty=جراح و متخصص زنان زایمان نازایی
+  count=   3 share=  0.5% specialty=متخصص پوست و مو و زیبایی و لیزر
+
+========================================================================
+8) Date coverage
+========================================================================
+date_non_null=66,465 (100.0%)
+
+year_counts:
+  1397: 888
+  1398: 1,621
+  1399: 3,913
+  1400: 11,512
+  1401: 5,594
+  1402: 7,180
+  1403: 14,185
+  1404: 20,654
+  1405: 918
+
+========================================================================
+9) Samples per label
+========================================================================
+
+label=Negative total=2,742
+  - عدم رضایت
+  - عدم رضایت
+  - عدم رضایت
+  - عدم رضایت
+  - عدم رضایت
+  - عدم رضایت
+
+label=Neutral total=8,076
+  - تهت درما
+  - عفونت درحال درمان همچنان
+  - در حال چک اپ هستم
+  - مشکل دیسک گردن
+  - رفتار خیلی خوب و حرفه ای داشتند
+  - بیماردکترهستم
+
+label=Positive total=55,647
+  - جراحی لگن خانمم و موفقیت آمیز
+  - پزشک محترم و خوش اخلاق بیماری رو خیلی خوب تشخیص میدن و در کارشون حرفه ای و عالی هستن
+  - باردارم.زیرنظر خانم دکتر
+  - بسیار پزشک با تجربه و متبحری هستند ایشون، برای تشخیص و بیمار ارزش قائلند و دانش بالایی دارند
+  - با درود سرکار خانم دکتر خاتمی بسیار حاذق و نیک اخلاق هستند . با حوصله مشکل من رو بررسی کردن و با یک جلسه بهبود یافتم . بسیاز از ایشان رضایت دارم
+  - من مشکل دیسک کمر داشتم باتوجه به شدت کم فشار دیسک طبق ام آر آی ولی علائم شدید بالینی هیچ پزشکی جرات و جسارت دست زدن به دیسک من رو نداشت و درآستانه فلج شدن بودم که دقیقه ۹۰ با ایشون آشنا شدم و بااعتماد
+
+========================================================================
+END OF REPORT
+========================================================================

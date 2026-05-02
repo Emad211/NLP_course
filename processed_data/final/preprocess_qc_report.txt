@@ -1,0 +1,36 @@
+PREPROCESS QC REPORT (FINALIZED, v2)
+project_root=C:\Users\Emad Karimi\Desktop\کرالر نوبت
+input_step05=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\preprocess_steps\step05_tokenized.csv
+output_full=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_preprocessed_full.csv
+output_retriever=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_for_tfidf_retriever.csv
+
+========================================================================
+0) Row counts
+========================================================================
+rows_total=66,465
+rows_placeholder_negative=2,742 (4.1%)
+rows_tok_all_empty=1 (0.0%)
+rows_tok_nostop_empty=6,830 (10.3%)
+rows_text_for_tfidf_empty=1 (0.0%)
+retriever_rows_written=66,464
+
+========================================================================
+1) Uniqueness and duplicates
+========================================================================
+unique_text_step04=43,667
+unique_text_for_tfidf=38,904
+duplicate_rows_text_step04=22,798 (34.3%)
+duplicate_rows_text_for_tfidf=27,561 (41.5%)
+
+========================================================================
+2) By-label summary
+========================================================================
+ label  rows  placeholder  tok_all_empty  tok_nostop_empty  tfidf_empty  mean_tok_all  mean_tok_nostop
+    -1  2742         2742              0                 0            0      2.000000         1.000000
+     0  8076            0              0               615            0      6.114165         4.050396
+     1 55647            0              1              6215            1      7.388071         4.678815
+
+========================================================================
+3) Runtime
+========================================================================
+seconds=1.00
