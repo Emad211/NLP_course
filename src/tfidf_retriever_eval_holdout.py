@@ -53,7 +53,9 @@ def main():
         token_pattern=None,
         lowercase=True,
         min_df=2,
-        max_df=0.6,
+        max_df=0.95,
+        ngram_range=(1, 2),
+        max_features=60000,
         sublinear_tf=True,
         norm="l2",
     )

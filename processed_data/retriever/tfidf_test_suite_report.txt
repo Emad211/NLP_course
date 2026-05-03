@@ -2,14 +2,16 @@ TF-IDF RETRIEVER — TEST SUITE REPORT
 index=C:\Users\Emad Karimi\Desktop\کرالر نوبت\models\tfidf_doctor_retriever.joblib
 doctors=545
 vocab_size=35,064
+vectorizer_params=lowercase=True, min_df=2, max_df=0.95, ngram_range=(1, 2), max_features=60000, sublinear_tf=True, norm=l2
 
 ========================================================================
 SET=medical  size=13
 ========================================================================
 query_raw=سنگ کلیه
 query_preprocessed=سنگ کلیه
-tokens=['سنگ', 'کلیه']
-in_vocab=['سنگ', 'کلیه']
+tokens_split=['سنگ', 'کلیه']
+vectorizer_terms=['سنگ', 'کلیه', 'سنگ کلیه']
+in_vocab=['سنگ', 'کلیه', 'سنگ کلیه']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('سنگ کلیه', 0.5998780959891242), ('کلیه', 0.5698037099222213), ('سنگ', 0.5616671631058169)]
@@ -22,8 +24,9 @@ top5:
 
 query_raw=دیسک کمر
 query_preprocessed=دیسک کمر
-tokens=['دیسک', 'کمر']
-in_vocab=['دیسک', 'کمر']
+tokens_split=['دیسک', 'کمر']
+vectorizer_terms=['دیسک', 'کمر', 'دیسک کمر']
+in_vocab=['دیسک', 'کمر', 'دیسک کمر']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('دیسک کمر', 0.6094682562486498), ('دیسک', 0.5736922263468076), ('کمر', 0.547198020879529)]
@@ -36,8 +39,9 @@ top5:
 
 query_raw=پارگی رباط صلیبی
 query_preprocessed=پارگی رباط صلیبی
-tokens=['پارگی', 'رباط', 'صلیبی']
-in_vocab=['پارگی', 'رباط', 'صلیبی']
+tokens_split=['پارگی', 'رباط', 'صلیبی']
+vectorizer_terms=['پارگی', 'رباط', 'صلیبی', 'پارگی رباط', 'رباط صلیبی']
+in_vocab=['پارگی', 'رباط', 'صلیبی', 'پارگی رباط', 'رباط صلیبی']
 oov=[]
 query_vector_nnz=5
 query_top_terms=[('پارگی رباط', 0.48401687069263705), ('رباط صلیبی', 0.47546549629313006), ('صلیبی', 0.47272648832391534), ('رباط', 0.4248785915625536), ('پارگی', 0.36833148166888263)]
@@ -50,8 +54,9 @@ top5:
 
 query_raw=ریزش مو
 query_preprocessed=ریزش مو
-tokens=['ریزش', 'مو']
-in_vocab=['ریزش', 'مو']
+tokens_split=['ریزش', 'مو']
+vectorizer_terms=['ریزش', 'مو', 'ریزش مو']
+in_vocab=['ریزش', 'مو', 'ریزش مو']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('ریزش مو', 0.5962170434423562), ('ریزش', 0.5794768058392605), ('مو', 0.5556364536305942)]
@@ -64,7 +69,8 @@ top5:
 
 query_raw=میگرن
 query_preprocessed=میگرن
-tokens=['میگرن']
+tokens_split=['میگرن']
+vectorizer_terms=['میگرن']
 in_vocab=['میگرن']
 oov=[]
 query_vector_nnz=1
@@ -78,7 +84,8 @@ top5:
 
 query_raw=اگزما
 query_preprocessed=اگزما
-tokens=['اگزما']
+tokens_split=['اگزما']
+vectorizer_terms=['اگزما']
 in_vocab=['اگزما']
 oov=[]
 query_vector_nnz=1
@@ -92,8 +99,9 @@ top5:
 
 query_raw=جوش صورت
 query_preprocessed=جوش صورت
-tokens=['جوش', 'صورت']
-in_vocab=['جوش', 'صورت']
+tokens_split=['جوش', 'صورت']
+vectorizer_terms=['جوش', 'صورت', 'جوش صورت']
+in_vocab=['جوش', 'صورت', 'جوش صورت']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('جوش صورت', 0.6483601204297835), ('جوش', 0.5908227833156288), ('صورت', 0.4801641312628943)]
@@ -106,8 +114,9 @@ top5:
 
 query_raw=تست پاپ اسمیر
 query_preprocessed=تست پاپ اسمیر
-tokens=['تست', 'پاپ', 'اسمیر']
-in_vocab=['تست', 'پاپ', 'اسمیر']
+tokens_split=['تست', 'پاپ', 'اسمیر']
+vectorizer_terms=['تست', 'پاپ', 'اسمیر', 'تست پاپ', 'پاپ اسمیر']
+in_vocab=['تست', 'پاپ', 'اسمیر', 'تست پاپ', 'پاپ اسمیر']
 oov=[]
 query_vector_nnz=5
 query_top_terms=[('تست پاپ', 0.4959949202202679), ('پاپ اسمیر', 0.44945668794682025), ('اسمیر', 0.4462712168548315), ('پاپ', 0.4431663993282441), ('تست', 0.39550381577035615)]
@@ -120,9 +129,10 @@ top5:
 
 query_raw=HPV
 query_preprocessed=HPV
-tokens=['HPV']
-in_vocab=[]
-oov=['HPV']
+tokens_split=['HPV']
+vectorizer_terms=['hpv']
+in_vocab=['hpv']
+oov=[]
 query_vector_nnz=1
 query_top_terms=[('hpv', 1.0)]
 top5:
@@ -134,9 +144,10 @@ top5:
 
 query_raw=MRI گردن
 query_preprocessed=MRI گردن
-tokens=['MRI', 'گردن']
-in_vocab=['گردن']
-oov=['MRI']
+tokens_split=['MRI', 'گردن']
+vectorizer_terms=['mri', 'گردن', 'mri گردن']
+in_vocab=['mri', 'گردن']
+oov=['mri گردن']
 query_vector_nnz=2
 query_top_terms=[('mri', 0.8629759461659389), ('گردن', 0.5052450062484564)]
 top5:
@@ -148,9 +159,10 @@ top5:
 
 query_raw=PRP زانو
 query_preprocessed=PRP زانو
-tokens=['PRP', 'زانو']
-in_vocab=['زانو']
-oov=['PRP']
+tokens_split=['PRP', 'زانو']
+vectorizer_terms=['prp', 'زانو', 'prp زانو']
+in_vocab=['prp', 'زانو', 'prp زانو']
+oov=[]
 query_vector_nnz=3
 query_top_terms=[('prp زانو', 0.7548144410260337), ('prp', 0.5629217688928749), ('زانو', 0.3367109171456621)]
 top5:
@@ -162,8 +174,9 @@ top5:
 
 query_raw=تنگی کانال نخاعی
 query_preprocessed=تنگی کانال نخاعی
-tokens=['تنگی', 'کانال', 'نخاعی']
-in_vocab=['تنگی', 'کانال', 'نخاعی']
+tokens_split=['تنگی', 'کانال', 'نخاعی']
+vectorizer_terms=['تنگی', 'کانال', 'نخاعی', 'تنگی کانال', 'کانال نخاعی']
+in_vocab=['تنگی', 'کانال', 'نخاعی', 'تنگی کانال', 'کانال نخاعی']
 oov=[]
 query_vector_nnz=5
 query_top_terms=[('کانال نخاعی', 0.5268564832070557), ('نخاعی', 0.4996923050350532), ('تنگی کانال', 0.4295489656231446), ('کانال', 0.40808051343336876), ('تنگی', 0.34883782346456277)]
@@ -176,8 +189,9 @@ top5:
 
 query_raw=آندوسکوپی بینی
 query_preprocessed=آندوسکوپی بینی
-tokens=['آندوسکوپی', 'بینی']
-in_vocab=['آندوسکوپی', 'بینی']
+tokens_split=['آندوسکوپی', 'بینی']
+vectorizer_terms=['آندوسکوپی', 'بینی', 'آندوسکوپی بینی']
+in_vocab=['آندوسکوپی', 'بینی', 'آندوسکوپی بینی']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('آندوسکوپی بینی', 0.7401412166926709), ('آندوسکوپی', 0.5965066364600441), ('بینی', 0.3104364862766903)]
@@ -193,7 +207,8 @@ SET=service  size=8
 ========================================================================
 query_raw=با حوصله
 query_preprocessed=حوصله
-tokens=['حوصله']
+tokens_split=['حوصله']
+vectorizer_terms=['حوصله']
 in_vocab=['حوصله']
 oov=[]
 query_vector_nnz=1
@@ -207,7 +222,8 @@ top5:
 
 query_raw=وقت شناس
 query_preprocessed=وقت‌شناس
-tokens=['وقت\u200cشناس']
+tokens_split=['وقت\u200cشناس']
+vectorizer_terms=['وقت\u200cشناس']
 in_vocab=['وقت\u200cشناس']
 oov=[]
 query_vector_nnz=1
@@ -221,8 +237,9 @@ top5:
 
 query_raw=بد برخورد
 query_preprocessed=بد برخورد
-tokens=['بد', 'برخورد']
-in_vocab=['بد', 'برخورد']
+tokens_split=['بد', 'برخورد']
+vectorizer_terms=['بد', 'برخورد', 'بد برخورد']
+in_vocab=['بد', 'برخورد', 'بد برخورد']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('بد برخورد', 0.9092919207684814), ('بد', 0.354661141929168), ('برخورد', 0.21772385544690404)]
@@ -235,7 +252,8 @@ top5:
 
 query_raw=معطلی زیاد
 query_preprocessed=معطلی
-tokens=['معطلی']
+tokens_split=['معطلی']
+vectorizer_terms=['معطلی']
 in_vocab=['معطلی']
 oov=[]
 query_vector_nnz=1
@@ -249,9 +267,10 @@ top5:
 
 query_raw=نوبت دهی افتضاح
 query_preprocessed=نوبت دهی افتضاح
-tokens=['نوبت', 'دهی', 'افتضاح']
-in_vocab=['نوبت', 'دهی']
-oov=['افتضاح']
+tokens_split=['نوبت', 'دهی', 'افتضاح']
+vectorizer_terms=['نوبت', 'دهی', 'افتضاح', 'نوبت دهی', 'دهی افتضاح']
+in_vocab=['نوبت', 'دهی', 'نوبت دهی']
+oov=['افتضاح', 'دهی افتضاح']
 query_vector_nnz=3
 query_top_terms=[('نوبت دهی', 0.6679952730995666), ('دهی', 0.6255296393534586), ('نوبت', 0.403106667529783)]
 top5:
@@ -263,9 +282,10 @@ top5:
 
 query_raw=پاسخگو نبودن مطب
 query_preprocessed=پاسخگو نبودن مطب
-tokens=['پاسخگو', 'نبودن', 'مطب']
+tokens_split=['پاسخگو', 'نبودن', 'مطب']
+vectorizer_terms=['پاسخگو', 'نبودن', 'مطب', 'پاسخگو نبودن', 'نبودن مطب']
 in_vocab=['پاسخگو', 'نبودن', 'مطب']
-oov=[]
+oov=['پاسخگو نبودن', 'نبودن مطب']
 query_vector_nnz=3
 query_top_terms=[('نبودن', 0.7343172325522007), ('پاسخگو', 0.5939902887048891), ('مطب', 0.32856314294387867)]
 top5:
@@ -277,7 +297,8 @@ top5:
 
 query_raw=هزینه بالا
 query_preprocessed=هزینه
-tokens=['هزینه']
+tokens_split=['هزینه']
+vectorizer_terms=['هزینه']
 in_vocab=['هزینه']
 oov=[]
 query_vector_nnz=1
@@ -291,8 +312,9 @@ top5:
 
 query_raw=تشخیص اشتباه
 query_preprocessed=تشخیص اشتباه
-tokens=['تشخیص', 'اشتباه']
-in_vocab=['تشخیص', 'اشتباه']
+tokens_split=['تشخیص', 'اشتباه']
+vectorizer_terms=['تشخیص', 'اشتباه', 'تشخیص اشتباه']
+in_vocab=['تشخیص', 'اشتباه', 'تشخیص اشتباه']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('تشخیص اشتباه', 0.7526381221664864), ('اشتباه', 0.6323632265772247), ('تشخیص', 0.18344646830764305)]
@@ -308,7 +330,8 @@ SET=procedures  size=9
 ========================================================================
 query_raw=سزارین
 query_preprocessed=سزارین
-tokens=['سزارین']
+tokens_split=['سزارین']
+vectorizer_terms=['سزارین']
 in_vocab=['سزارین']
 oov=[]
 query_vector_nnz=1
@@ -322,8 +345,9 @@ top5:
 
 query_raw=زایمان طبیعی
 query_preprocessed=زایمان طبیعی
-tokens=['زایمان', 'طبیعی']
-in_vocab=['زایمان', 'طبیعی']
+tokens_split=['زایمان', 'طبیعی']
+vectorizer_terms=['زایمان', 'طبیعی', 'زایمان طبیعی']
+in_vocab=['زایمان', 'طبیعی', 'زایمان طبیعی']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('زایمان طبیعی', 0.7071435714198921), ('طبیعی', 0.5231910347343035), ('زایمان', 0.4756249684080606)]
@@ -336,7 +360,8 @@ top5:
 
 query_raw=سرکلاژ
 query_preprocessed=سرکلاژ
-tokens=['سرکلاژ']
+tokens_split=['سرکلاژ']
+vectorizer_terms=['سرکلاژ']
 in_vocab=['سرکلاژ']
 oov=[]
 query_vector_nnz=1
@@ -350,7 +375,8 @@ top5:
 
 query_raw=لاپاراسکوپی
 query_preprocessed=لاپاراسکوپی
-tokens=['لاپاراسکوپی']
+tokens_split=['لاپاراسکوپی']
+vectorizer_terms=['لاپاراسکوپی']
 in_vocab=['لاپاراسکوپی']
 oov=[]
 query_vector_nnz=1
@@ -364,8 +390,9 @@ top5:
 
 query_raw=عمل لوزه
 query_preprocessed=عمل لوزه
-tokens=['عمل', 'لوزه']
-in_vocab=['عمل', 'لوزه']
+tokens_split=['عمل', 'لوزه']
+vectorizer_terms=['عمل', 'لوزه', 'عمل لوزه']
+in_vocab=['عمل', 'لوزه', 'عمل لوزه']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('عمل لوزه', 0.7108188567691441), ('لوزه', 0.639641060223067), ('عمل', 0.29256771342394833)]
@@ -378,8 +405,9 @@ top5:
 
 query_raw=لیزر پوست
 query_preprocessed=لیزر پوست
-tokens=['لیزر', 'پوست']
-in_vocab=['لیزر', 'پوست']
+tokens_split=['لیزر', 'پوست']
+vectorizer_terms=['لیزر', 'پوست', 'لیزر پوست']
+in_vocab=['لیزر', 'پوست', 'لیزر پوست']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('لیزر پوست', 0.8263009159967735), ('پوست', 0.4079032649281205), ('لیزر', 0.3883834737522603)]
@@ -392,8 +420,9 @@ top5:
 
 query_raw=تعویض مفصل زانو
 query_preprocessed=تعویض مفصل زانو
-tokens=['تعویض', 'مفصل', 'زانو']
-in_vocab=['تعویض', 'مفصل', 'زانو']
+tokens_split=['تعویض', 'مفصل', 'زانو']
+vectorizer_terms=['تعویض', 'مفصل', 'زانو', 'تعویض مفصل', 'مفصل زانو']
+in_vocab=['تعویض', 'مفصل', 'زانو', 'تعویض مفصل', 'مفصل زانو']
 oov=[]
 query_vector_nnz=5
 query_top_terms=[('مفصل زانو', 0.5015574225942654), ('تعویض مفصل', 0.46809093714714645), ('تعویض', 0.4472648205785414), ('مفصل', 0.4290676222167303), ('زانو', 0.3810330461251755)]
@@ -406,8 +435,9 @@ top5:
 
 query_raw=جراحی دیسک کمر
 query_preprocessed=جراحی دیسک کمر
-tokens=['جراحی', 'دیسک', 'کمر']
-in_vocab=['جراحی', 'دیسک', 'کمر']
+tokens_split=['جراحی', 'دیسک', 'کمر']
+vectorizer_terms=['جراحی', 'دیسک', 'کمر', 'جراحی دیسک', 'دیسک کمر']
+in_vocab=['جراحی', 'دیسک', 'کمر', 'جراحی دیسک', 'دیسک کمر']
 oov=[]
 query_vector_nnz=5
 query_top_terms=[('جراحی دیسک', 0.6659162441126578), ('دیسک کمر', 0.4307241843278817), ('دیسک', 0.40544050279078436), ('کمر', 0.3867164840706803), ('جراحی', 0.23895730268552015)]
@@ -420,8 +450,9 @@ top5:
 
 query_raw=سنگ شکن کلیه
 query_preprocessed=سنگ‌شکن کلیه
-tokens=['سنگ\u200cشکن', 'کلیه']
-in_vocab=['سنگ\u200cشکن', 'کلیه']
+tokens_split=['سنگ\u200cشکن', 'کلیه']
+vectorizer_terms=['سنگ\u200cشکن', 'کلیه', 'سنگ\u200cشکن کلیه']
+in_vocab=['سنگ\u200cشکن', 'کلیه', 'سنگ\u200cشکن کلیه']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('سنگ\u200cشکن کلیه', 0.7514857425283868), ('سنگ\u200cشکن', 0.5413750789125404), ('کلیه', 0.3770705540200662)]
@@ -437,7 +468,8 @@ SET=two_word_variants  size=11
 ========================================================================
 query_raw=زایمان
 query_preprocessed=زایمان
-tokens=['زایمان']
+tokens_split=['زایمان']
+vectorizer_terms=['زایمان']
 in_vocab=['زایمان']
 oov=[]
 query_vector_nnz=1
@@ -451,8 +483,9 @@ top5:
 
 query_raw=مراقبت زایمان
 query_preprocessed=مراقبت زایمان
-tokens=['مراقبت', 'زایمان']
-in_vocab=['مراقبت', 'زایمان']
+tokens_split=['مراقبت', 'زایمان']
+vectorizer_terms=['مراقبت', 'زایمان', 'مراقبت زایمان']
+in_vocab=['مراقبت', 'زایمان', 'مراقبت زایمان']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('مراقبت زایمان', 0.8089886250584597), ('مراقبت', 0.4457079977979685), ('زایمان', 0.3832515952020932)]
@@ -465,8 +498,9 @@ top5:
 
 query_raw=مراقبت پس از زایمان
 query_preprocessed=مراقبت زایمان
-tokens=['مراقبت', 'زایمان']
-in_vocab=['مراقبت', 'زایمان']
+tokens_split=['مراقبت', 'زایمان']
+vectorizer_terms=['مراقبت', 'زایمان', 'مراقبت زایمان']
+in_vocab=['مراقبت', 'زایمان', 'مراقبت زایمان']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('مراقبت زایمان', 0.8089886250584597), ('مراقبت', 0.4457079977979685), ('زایمان', 0.3832515952020932)]
@@ -479,8 +513,9 @@ top5:
 
 query_raw=درد زانو
 query_preprocessed=درد زانو
-tokens=['درد', 'زانو']
-in_vocab=['درد', 'زانو']
+tokens_split=['درد', 'زانو']
+vectorizer_terms=['درد', 'زانو', 'درد زانو']
+in_vocab=['درد', 'زانو', 'درد زانو']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('درد زانو', 0.7019852890527895), ('زانو', 0.6206312344711118), ('درد', 0.34933297117840933)]
@@ -493,9 +528,10 @@ top5:
 
 query_raw=درد زانو راه رفتن
 query_preprocessed=درد زانو رفتن
-tokens=['درد', 'زانو', 'رفتن']
-in_vocab=['درد', 'زانو', 'رفتن']
-oov=[]
+tokens_split=['درد', 'زانو', 'رفتن']
+vectorizer_terms=['درد', 'زانو', 'رفتن', 'درد زانو', 'زانو رفتن']
+in_vocab=['درد', 'زانو', 'رفتن', 'درد زانو']
+oov=['زانو رفتن']
 query_vector_nnz=4
 query_top_terms=[('درد زانو', 0.5940303196351188), ('رفتن', 0.532841968803809), ('زانو', 0.5251873170816383), ('درد', 0.2956107197177904)]
 top5:
@@ -507,8 +543,9 @@ top5:
 
 query_raw=سنگ کلیه
 query_preprocessed=سنگ کلیه
-tokens=['سنگ', 'کلیه']
-in_vocab=['سنگ', 'کلیه']
+tokens_split=['سنگ', 'کلیه']
+vectorizer_terms=['سنگ', 'کلیه', 'سنگ کلیه']
+in_vocab=['سنگ', 'کلیه', 'سنگ کلیه']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('سنگ کلیه', 0.5998780959891242), ('کلیه', 0.5698037099222213), ('سنگ', 0.5616671631058169)]
@@ -521,8 +558,9 @@ top5:
 
 query_raw=درد سنگ کلیه
 query_preprocessed=درد سنگ کلیه
-tokens=['درد', 'سنگ', 'کلیه']
-in_vocab=['درد', 'سنگ', 'کلیه']
+tokens_split=['درد', 'سنگ', 'کلیه']
+vectorizer_terms=['درد', 'سنگ', 'کلیه', 'درد سنگ', 'سنگ کلیه']
+in_vocab=['درد', 'سنگ', 'کلیه', 'درد سنگ', 'سنگ کلیه']
 oov=[]
 query_vector_nnz=5
 query_top_terms=[('درد سنگ', 0.7386600168933396), ('سنگ کلیه', 0.3901972435252036), ('کلیه', 0.37063503143164667), ('سنگ', 0.36534252590293614), ('درد', 0.17686718980915833)]
@@ -535,8 +573,9 @@ top5:
 
 query_raw=پارگی رباط
 query_preprocessed=پارگی رباط
-tokens=['پارگی', 'رباط']
-in_vocab=['پارگی', 'رباط']
+tokens_split=['پارگی', 'رباط']
+vectorizer_terms=['پارگی', 'رباط', 'پارگی رباط']
+in_vocab=['پارگی', 'رباط', 'پارگی رباط']
 oov=[]
 query_vector_nnz=3
 query_top_terms=[('پارگی رباط', 0.6523741398803246), ('رباط', 0.5726655877253519), ('پارگی', 0.49644950020176676)]
@@ -549,8 +588,9 @@ top5:
 
 query_raw=پارگی رباط صلیبی
 query_preprocessed=پارگی رباط صلیبی
-tokens=['پارگی', 'رباط', 'صلیبی']
-in_vocab=['پارگی', 'رباط', 'صلیبی']
+tokens_split=['پارگی', 'رباط', 'صلیبی']
+vectorizer_terms=['پارگی', 'رباط', 'صلیبی', 'پارگی رباط', 'رباط صلیبی']
+in_vocab=['پارگی', 'رباط', 'صلیبی', 'پارگی رباط', 'رباط صلیبی']
 oov=[]
 query_vector_nnz=5
 query_top_terms=[('پارگی رباط', 0.48401687069263705), ('رباط صلیبی', 0.47546549629313006), ('صلیبی', 0.47272648832391534), ('رباط', 0.4248785915625536), ('پارگی', 0.36833148166888263)]
@@ -563,7 +603,8 @@ top5:
 
 query_raw=با حوصله
 query_preprocessed=حوصله
-tokens=['حوصله']
+tokens_split=['حوصله']
+vectorizer_terms=['حوصله']
 in_vocab=['حوصله']
 oov=[]
 query_vector_nnz=1
@@ -577,7 +618,8 @@ top5:
 
 query_raw=خیلی با حوصله
 query_preprocessed=حوصله
-tokens=['حوصله']
+tokens_split=['حوصله']
+vectorizer_terms=['حوصله']
 in_vocab=['حوصله']
 oov=[]
 query_vector_nnz=1

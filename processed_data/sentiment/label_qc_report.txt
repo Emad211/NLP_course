@@ -1,0 +1,20 @@
+HUMAN LABEL QC REPORT
+input=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\sentiment\labeling_batch_01.csv
+rows_total=1,880
+rows_labeled=374
+rows_trainable_unique_item_id=370
+classes_present=[-1.0, 0.0, 1.0]
+
+Label distribution (trainable):
+  -1: 62
+  0: 180
+  1: 128
+
+Split sizes:
+  train=296
+  dev=37
+  test=37
+
+Duplicate QA (self-consistency):
+  duplicate_groups_with_2+labels_agree=0
+  duplicate_groups_with_2+labels_disagree=0

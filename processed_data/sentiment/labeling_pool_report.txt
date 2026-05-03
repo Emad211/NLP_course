@@ -1,0 +1,42 @@
+SENTIMENT LABELING POOL — BUILD REPORT (v3)
+rows_input_full=66,465
+rows_placeholder_removed=2,744
+rows_after_sanity_and_dedup=42,878
+rows_in_pool=8,000
+
+Candidate pool sizes (before sampling):
+  high_neg_candidates=352
+  service_neg_candidates=663
+  rate_neg_candidates=4,082
+  mid_neg_candidates=320
+  mixed_candidates=263
+  high_pos_candidates=11,792
+  random_candidates=25,460
+
+Bucket counts (final pool):
+  topup_pref: 3,020
+  rate_neg: 1,400
+  random: 1,300
+  high_pos: 698
+  service_neg: 654
+  high_neg: 348
+  mid_neg: 319
+  mixed: 261
+
+unique_doctors_in_pool=528
+specialty_top15:
+  متخصص مغز و اعصاب و ستون فقرات: 390
+  متخصص زنان و زایمان: 318
+  متخصص پوست و مو: 302
+  متخصص گوش و حلق و بینی: 239
+  متخصص جراحی مغز و اعصاب: 150
+  متخصص پوست ، مو ، زیبایی و لیزر: 146
+  جراح و متخصص زنان و زایمان و نازایی: 128
+  متخصص پوست ، مو و زیبایی: 127
+  متخصص پوست ، مو و لیزر: 117
+  متخصص ارتوپدی: 117
+  جراح و متخصص زنان و زایمان: 102
+  جراح و متخصص زنان ، زایمان و نازایی: 101
+  متخصص ارتوپدی ( جراح استخوان و مفاصل ): 94
+  متخصص مغز و اعصاب: 93
+  متخصص مغز و اعصاب ( نورولوژی ): 82
