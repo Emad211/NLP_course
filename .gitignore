@@ -1,1 +1,70 @@
-/chromedriver-win64
+# -----------------------------
+# Python / environments
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+.env.*
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+logs/
+tmp/
+temp/
+
+# -----------------------------
+# Data artifacts (large)
+# -----------------------------
+# Raw scraped data (can be huge)
+data/raw_json/
+data/**/*.json
+
+# If you want to keep only certain JSONs tracked,
+# remove the line above and add allowlist rules.
+
+# -----------------------------
+# Generated outputs
+# -----------------------------
+processed_data/
+models/
+
+# If you want to version-control SOME reports, comment the lines above
+# and instead ignore only heavy subfolders like:
+# processed_data/preprocess_steps/
+# processed_data/final/
+# processed_data/retriever/
+# processed_data/sentiment/
+# processed_data/sentiment_hybrid_v1/
+# models/*.joblib
+
+# -----------------------------
+# Credentials / secrets
+# -----------------------------
+*.pem
+*.key
+*.p12
+*.pfx
+*secrets*
+*secret*
+*apikey*
+*api_key*
+config.yaml

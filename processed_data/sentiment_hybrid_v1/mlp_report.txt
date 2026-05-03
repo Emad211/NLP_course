@@ -1,0 +1,44 @@
+SENTIMENT MLP REPORT (HYBRID v1)
+train_rows=4,057 dev_rows=55 test_rows=55
+label_dist_train:
+  -1: 667
+  0: 1,742
+  1: 1,648
+
+=== DEV (gold) ===
+accuracy=0.6364
+macro_f1=0.6122
+confusion_matrix labels=[-1,0,1]:
+[[ 6  2  1]
+ [ 6 17  4]
+ [ 5  2 12]]
+classification_report:
+              precision    recall  f1-score   support
+
+          -1     0.3529    0.6667    0.4615         9
+           0     0.8095    0.6296    0.7083        27
+           1     0.7059    0.6316    0.6667        19
+
+    accuracy                         0.6364        55
+   macro avg     0.6228    0.6426    0.6122        55
+weighted avg     0.6990    0.6364    0.6536        55
+
+
+=== TEST (gold) ===
+accuracy=0.6182
+macro_f1=0.6053
+confusion_matrix labels=[-1,0,1]:
+[[ 8  0  1]
+ [ 5 17  5]
+ [ 5  5  9]]
+classification_report:
+              precision    recall  f1-score   support
+
+          -1     0.4444    0.8889    0.5926         9
+           0     0.7727    0.6296    0.6939        27
+           1     0.6000    0.4737    0.5294        19
+
+    accuracy                         0.6182        55
+   macro avg     0.6057    0.6641    0.6053        55
+weighted avg     0.6593    0.6182    0.6205        55
+

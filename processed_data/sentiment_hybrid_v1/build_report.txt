@@ -1,0 +1,30 @@
+SENTIMENT HYBRID BUILD REPORT (v1)
+pool_rows=8,000
+gold_rows_found_in_batch1=370
+unlabeled_rows=7,630
+
+Best weak-label params (tuned on gold):
+{
+  "neg_th": 1.2,
+  "pos_th": 1.3,
+  "info_max_words": 3,
+  "mixed_margin": 0.6,
+  "neg_pos_max": 0.8,
+  "pos_neg_max": 0.8,
+  "service_pos_max": 1.0,
+  "cv_macro_f1": 0.5618551125705268
+}
+
+weak_conf_threshold=0.65
+unlabeled_kept_as_train_weak=3,797
+
+Gold label distribution:
+{'-1.0': 62, '0.0': 180, '1.0': 128}
+Weak label distribution on unlabeled (all):
+{'-1': 623, '0': 5449, '1': 1558}
+Weak label distribution on unlabeled (kept>=th):
+{'-1.0': 623, '0.0': 1616, '1.0': 1558}
+
+train_rows=4,057 (gold_train + weak_highconf)
+dev_rows=55 (gold only)
+test_rows=55 (gold only)
