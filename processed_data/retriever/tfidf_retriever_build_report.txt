@@ -1,9 +1,9 @@
 TF-IDF DOCTOR RETRIEVER — BUILD REPORT
-project_root=C:\Users\Emad Karimi\Desktop\کرالر نوبت
-input_comments_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_for_tfidf_retriever.csv
-doctor_docs_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\retriever\doctor_documents.csv
-keywords_csv=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\retriever\doctor_keywords.csv
-index_joblib=C:\Users\Emad Karimi\Desktop\کرالر نوبت\models\tfidf_doctor_retriever.joblib
+project_root=C:\Users\Emad Karimi\Desktop\for NLP course
+input_comments_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_for_tfidf_retriever.csv
+doctor_docs_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\retriever\doctor_documents.csv
+keywords_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\retriever\doctor_keywords.csv
+index_joblib=C:\Users\Emad Karimi\Desktop\for NLP course\models\tfidf_doctor_retriever.joblib
 
 rows_total_in_input=66,464
 placeholder_rows_in_input=2,742
@@ -37,4 +37,4 @@ doctor_id=286398  name=دکتر مهین بشارتی  comments_used=268  doc_to
 doctor_id=181690  name=دکتر بهروز عظیمی  comments_used=266  doc_tokens_est=1071
   top_terms=عظیمی | افسردگی | میگرن | میگرن داشتم | ام‌اس | بیماری‌ام اس | صرع | بیماری‌ام | پارکینسون | مغزی | آلزایمر | لرزش | تشنج | مشکل اعصاب | دقیق حاذق
 
-seconds=1.17
+seconds=1.21

@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
-
+# داپلیکیت ها همینجا حذف بشن 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 OUT_DIR = BASE_DIR / "processed_data"

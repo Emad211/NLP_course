@@ -1,0 +1,207 @@
+NOBAT DATASET — EDA REPORT (RAW, NO PREPROCESSING)
+project_root=C:\Users\Emad Karimi\Desktop\for NLP course
+data_dir=C:\Users\Emad Karimi\Desktop\for NLP course\data
+
+
+========================================================================
+1) File loading
+========================================================================
+json_files_total=574
+json_files_loaded=574
+json_files_failed=0
+
+========================================================================
+2) High-level shape
+========================================================================
+doctors_rows=574
+comments_rows=67,110
+unique_doctor_ids_in_doctors=569
+unique_doctor_ids_in_comments=545
+
+========================================================================
+3) Doctor ID integrity
+========================================================================
+doctor_id_null=0 (0.0%)
+doctor_id_duplicate_rows=5 (0.9%)
+
+top_duplicate_doctor_ids:
+  doctor_id=305350  count=2
+  doctor_id=263705  count=2
+  doctor_id=331387  count=2
+  doctor_id=228021  count=2
+  doctor_id=305568  count=2
+
+========================================================================
+4) Doctor profile missingness
+========================================================================
+name_null=0 (0.0%)
+specialty_null=0 (0.0%)
+verified_null=0 (0.0%)
+followers_count_null=574 (100.0%)
+reviews_count_null=19 (3.3%)
+rating_percent_null=12 (2.1%)
+rating_score_5_null=12 (2.1%)
+biography_null=0 (0.0%)  empty_string=148 (25.8%)
+office_count_null=0 (0.0%)
+
+========================================================================
+5) Doctor numeric stats
+========================================================================
+followers_count: no data
+reviews_count: min=1.00 mean=265.18 median=156.00 p90=621.00 max=2663.00
+rating_percent: min=80.00 mean=92.90 median=94.00 p90=96.00 max=100.00
+rating_score_5: min=4.00 mean=4.65 median=4.70 p90=4.80 max=5.00
+office_count: min=1.00 mean=1.49 median=1.00 p90=2.00 max=13.00
+
+========================================================================
+6) Specialties (raw)
+========================================================================
+unique_specialties=325
+specialty_null=0 (0.0%)
+
+top_30_specialties:
+  count=  30  share=  5.2%  specialty=متخصص پوست و مو
+  count=  25  share=  4.4%  specialty=متخصص گوش و حلق و بینی
+  count=  24  share=  4.2%  specialty=متخصص زنان و زایمان
+  count=  18  share=  3.1%  specialty=متخصص مغز و اعصاب و ستون فقرات
+  count=  12  share=  2.1%  specialty=جراح و متخصص گوش و حلق و بینی
+  count=  11  share=  1.9%  specialty=متخصص پوست ، مو ، زیبایی و لیزر
+  count=  11  share=  1.9%  specialty=متخصص جراحی مغز و اعصاب
+  count=  10  share=  1.7%  specialty=متخصص ارتوپدی
+  count=   9  share=  1.6%  specialty=متخصص پوست ، مو و زیبایی
+  count=   7  share=  1.2%  specialty=جراح و متخصص زنان و زایمان و نازایی
+  count=   6  share=  1.0%  specialty=جراح و متخصص ارتوپدی
+  count=   6  share=  1.0%  specialty=جراح و متخصص زنان و زایمان
+  count=   6  share=  1.0%  specialty=متخصص مغز و اعصاب
+  count=   5  share=  0.9%  specialty=متخصص و جراح گوش و حلق و بینی
+  count=   5  share=  0.9%  specialty=جراح و متخصص زنان ، زایمان و نازایی
+  count=   5  share=  0.9%  specialty=متخصص زنان و زایمان و نازایی
+  count=   5  share=  0.9%  specialty=متخصص جراحی کلیه و مجاری ادراری
+  count=   5  share=  0.9%  specialty=متخصص پوست ، مو ، زیبایی
+  count=   4  share=  0.7%  specialty=متخصص پوست ، مو و لیزر
+  count=   4  share=  0.7%  specialty=متخصص مغز و اعصاب ( نورولوژی )
+  count=   4  share=  0.7%  specialty=متخصص گوش و حلق و بینی و جراحی سر و گردن
+  count=   4  share=  0.7%  specialty=جراح و متخصص زنان زایمان و نازایی
+  count=   4  share=  0.7%  specialty=متخصص پوست و مو و زیبایی
+  count=   4  share=  0.7%  specialty=متخصص جراحی استخوان و مفاصل ( ارتوپدی )
+  count=   4  share=  0.7%  specialty=فلوشیپ جراحی ستون فقرات
+  count=   3  share=  0.5%  specialty=متخصص مغز و اعصاب ( نورولوژیست )
+  count=   3  share=  0.5%  specialty=متخصص ارتوپدی ( جراح استخوان و مفاصل )
+  count=   3  share=  0.5%  specialty=متخصص گوش حلق بینی
+  count=   3  share=  0.5%  specialty=متخصص پوست و مو (درماتولوژی)
+  count=   3  share=  0.5%  specialty=متخصص مغز و اعصاب (نورولوژی)
+
+========================================================================
+7) Comment missingness
+========================================================================
+text_null=0 (0.0%)
+rate_null=0 (0.0%)
+label_null=0 (0.0%)
+date_null=0 (0.0%)
+
+========================================================================
+8) Label distribution
+========================================================================
+label=Negative count=   2,797 share=   4.2%
+label=Neutral  count=   8,189 share=  12.2%
+label=Positive count=  56,124 share=  83.6%
+
+imbalance_ratio_majority_to_minority=20.07x
+
+========================================================================
+9) Rating distribution
+========================================================================
+rate_non_null=67,110 (100.0%)
+rate_unique_values=[0.0, 2.5, 5.0]
+rate_min=0.000
+rate_mean=4.487
+rate_median=5.000
+rate_max=5.000
+
+rate_bins:
+  eq_0 => 2,797 (4.2%)
+  (0,1] => 0 (0.0%)
+  (1,2] => 0 (0.0%)
+  (2,3] => 8,189 (12.2%)
+  (3,4] => 0 (0.0%)
+  (4,5] => 56,124 (83.6%)
+
+========================================================================
+10) Comment text quality (raw)
+========================================================================
+empty_text=0 (0.0%)
+duplicate_text_rows=22,807 (34.0%)
+very_short_text_lt3w=21,270 (31.7%)
+
+length_stats:
+  char_len: min=5.0 mean=37.2 median=21.0 p90=87.0 max=1264.0
+  word_len: min=1.0 mean=7.6 median=4.0 p90=18.0 max=267.0
+
+========================================================================
+11) Comments per doctor
+========================================================================
+doctors_with_any_comment=545
+comments_per_doctor_min=1
+comments_per_doctor_mean=123.14
+comments_per_doctor_median=96.00
+comments_per_doctor_p90=249.60
+comments_per_doctor_max=464
+
+========================================================================
+12) Date coverage
+========================================================================
+date_non_null=67,110 (100.0%)
+
+year_counts:
+  1397: 891
+  1398: 1,622
+  1399: 3,920
+  1400: 11,569
+  1401: 5,631
+  1402: 7,250
+  1403: 14,392
+  1404: 20,909
+  1405: 926
+
+========================================================================
+13) Sample comments per label
+========================================================================
+
+label=Negative total=2,797
+  - عدم رضایت
+  - عدم رضایت
+  - عدم رضایت
+  - عدم رضایت
+  - عدم رضایت
+
+label=Neutral total=8,189
+  - آلرژی داشتم بهتر شدم
+  - مشکل زانو
+  - هنوز درمانم تمام نشده
+  - سلام برای رفع تیرگی پوست صورتم رفتم بدنبود
+  - لکه تحت درمان
+
+label=Positive total=56,124
+  - دیسک کمر
+  - بسیار دکتر با علم و خوش اخلاق
+  - برادرزاده من را عمل انوریسم مغزی کرده اند
+  - جراحی داشتم عالی بود
+  - بسیارعالی
+
+========================================================================
+14) Doctors with zero comments (in this dataset)
+========================================================================
+doctors_with_zero_comments=24
+
+========================================================================
+15) Biography coverage
+========================================================================
+has_biography=426 (74.2%)
+empty_biography=148 (25.8%)
+bio_char_len_min=20
+bio_char_len_mean=557.5
+bio_char_len_max=33,000
+
+========================================================================
+END OF REPORT
+========================================================================

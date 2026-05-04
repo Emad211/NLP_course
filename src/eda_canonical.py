@@ -1,10 +1,9 @@
 import re
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
 
-
+# فیچرهای بی خود پاک بشن 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DOCTORS_CSV = BASE_DIR / "processed_data" / "doctors_raw_canonical.csv"
 COMMENTS_CSV = BASE_DIR / "processed_data" / "comments_raw_canonical.csv"
