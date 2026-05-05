@@ -1,21 +1,25 @@
-PREPROCESS QC REPORT (FINALIZED, v2)
-project_root=C:\Users\Emad Karimi\Desktop\کرالر نوبت
-input_step05=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\preprocess_steps\step05_tokenized.csv
-output_full=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_preprocessed_full.csv
-output_retriever=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_for_tfidf_retriever.csv
+PREPROCESS QC REPORT (FINALIZED, v4 + medical retriever track)
+project_root=C:\Users\Emad Karimi\Desktop\for NLP course
+input_step05=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\preprocess_steps\step05_tokenized.csv
+output_full=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_preprocessed_full.csv
+output_retriever_baseline=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_for_tfidf_retriever.csv
+output_retriever_medical=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_for_tfidf_retriever_medical.csv
+medical_stopwords_file=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_stopwords_seed_v02.txt
+medical_qc_report=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_qc_report.txt
+medical_samples_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_samples.csv
 
 ========================================================================
-0) Row counts
+0) Row counts (baseline)
 ========================================================================
 rows_total=66,465
 rows_placeholder_negative=2,742 (4.1%)
 rows_tok_all_empty=1 (0.0%)
 rows_tok_nostop_empty=6,830 (10.3%)
 rows_text_for_tfidf_empty=1 (0.0%)
-retriever_rows_written=66,464
+retriever_rows_written_baseline=66,464
 
 ========================================================================
-1) Uniqueness and duplicates
+1) Uniqueness and duplicates (baseline)
 ========================================================================
 unique_text_step04=43,667
 unique_text_for_tfidf=38,904
@@ -23,7 +27,7 @@ duplicate_rows_text_step04=22,798 (34.3%)
 duplicate_rows_text_for_tfidf=27,561 (41.5%)
 
 ========================================================================
-2) By-label summary
+2) By-label summary (baseline)
 ========================================================================
  label  rows  placeholder  tok_all_empty  tok_nostop_empty  tfidf_empty  mean_tok_all  mean_tok_nostop
     -1  2742         2742              0                 0            0      2.000000         1.000000
@@ -33,4 +37,4 @@ duplicate_rows_text_for_tfidf=27,561 (41.5%)
 ========================================================================
 3) Runtime
 ========================================================================
-seconds=1.04
+seconds=1.72
