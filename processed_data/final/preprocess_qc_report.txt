@@ -1,10 +1,11 @@
-PREPROCESS QC REPORT (FINALIZED, v4 + medical retriever track)
+PREPROCESS QC REPORT (FINALIZED, v5 + medical stopwords-from-file + safety guards)
 project_root=C:\Users\Emad Karimi\Desktop\for NLP course
 input_step05=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\preprocess_steps\step05_tokenized.csv
 output_full=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_preprocessed_full.csv
 output_retriever_baseline=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_for_tfidf_retriever.csv
 output_retriever_medical=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_for_tfidf_retriever_medical.csv
-medical_stopwords_file=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_stopwords_seed_v02.txt
+medical_stopwords_final_path=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_stopwords_final_v03.txt
+medical_stopwords_used_file=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_stopwords_used_v03.txt
 medical_qc_report=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_qc_report.txt
 medical_samples_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\retriever_medical_samples.csv
 
@@ -37,4 +38,4 @@ duplicate_rows_text_for_tfidf=27,561 (41.5%)
 ========================================================================
 3) Runtime
 ========================================================================
-seconds=1.72
+seconds=1.79

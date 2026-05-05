@@ -1,5 +1,7 @@
-TF-IDF RETRIEVER — TEST SUITE REPORT
-index=C:\Users\Emad Karimi\Desktop\کرالر نوبت\models\tfidf_doctor_retriever.joblib
+TF-IDF RETRIEVER — TEST SUITE REPORT (coverage-aware)
+variant=baseline
+index=C:\Users\Emad Karimi\Desktop\for NLP course\models\tfidf_doctor_retriever.joblib
+out_report=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\retriever\tfidf_test_suite_report.txt
 doctors=545
 vocab_size=35,064
 vectorizer_params=lowercase=True, min_df=2, max_df=0.95, ngram_range=(1, 2), max_features=60000, sublinear_tf=True, norm=l2
@@ -16,11 +18,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('سنگ کلیه', 0.5998780959891242), ('کلیه', 0.5698037099222213), ('سنگ', 0.5616671631058169)]
 top5:
-  doctor_id=301319  sim=0.3661
-  doctor_id=315482  sim=0.2778
-  doctor_id=249879  sim=0.2675
-  doctor_id=311174  sim=0.2525
-  doctor_id=293669  sim=0.2517
+  rank=01  doctor_id=301319  sim=0.3661  name=دکتر محمد کمالی
+  rank=02  doctor_id=315482  sim=0.2778  name=دکتر ابراهیم رسولیان هروی
+  rank=03  doctor_id=249879  sim=0.2675  name=دکتر رضا سرهنگ نژاد
+  rank=04  doctor_id=311174  sim=0.2525  name=دکتر امیررضا عابدی
+  rank=05  doctor_id=293669  sim=0.2517  name=دکتر الهام تهرانی پور
 
 query_raw=دیسک کمر
 query_preprocessed=دیسک کمر
@@ -31,11 +33,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('دیسک کمر', 0.6094682562486498), ('دیسک', 0.5736922263468076), ('کمر', 0.547198020879529)]
 top5:
-  doctor_id=320533  sim=0.2425
-  doctor_id=335493  sim=0.2252
-  doctor_id=342310  sim=0.2110
-  doctor_id=330360  sim=0.1858
-  doctor_id=126058  sim=0.1627
+  rank=01  doctor_id=320533  sim=0.2425  name=دکتر حامد جوادیان
+  rank=02  doctor_id=335493  sim=0.2252  name=دکتر کامکار آیین فر
+  rank=03  doctor_id=342310  sim=0.2110  name=دکتر مهدی معروف
+  rank=04  doctor_id=330360  sim=0.1858  name=دکتر مسلم جابریان همدانی
+  rank=05  doctor_id=126058  sim=0.1627  name=دکتر فرشاد شالچی
 
 query_raw=پارگی رباط صلیبی
 query_preprocessed=پارگی رباط صلیبی
@@ -46,11 +48,11 @@ oov=[]
 query_vector_nnz=5
 query_top_terms=[('پارگی رباط', 0.48401687069263705), ('رباط صلیبی', 0.47546549629313006), ('صلیبی', 0.47272648832391534), ('رباط', 0.4248785915625536), ('پارگی', 0.36833148166888263)]
 top5:
-  doctor_id=239005  sim=0.1637
-  doctor_id=127062  sim=0.1595
-  doctor_id=112956  sim=0.1525
-  doctor_id=179929  sim=0.1484
-  doctor_id=125199  sim=0.1465
+  rank=01  doctor_id=239005  sim=0.1637  name=دکتر مجید قربان زاده
+  rank=02  doctor_id=127062  sim=0.1595  name=دکتر ایمان قماشی
+  rank=03  doctor_id=112956  sim=0.1525  name=دکتر بهزاد حنفی زاده
+  rank=04  doctor_id=179929  sim=0.1484  name=دکتر حمیدرضا اصلانی
+  rank=05  doctor_id=125199  sim=0.1465  name=دکتر مازیار نفیسی
 
 query_raw=ریزش مو
 query_preprocessed=ریزش مو
@@ -61,11 +63,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('ریزش مو', 0.5962170434423562), ('ریزش', 0.5794768058392605), ('مو', 0.5556364536305942)]
 top5:
-  doctor_id=330816  sim=0.3249
-  doctor_id=339540  sim=0.2238
-  doctor_id=330947  sim=0.1947
-  doctor_id=199190  sim=0.1899
-  doctor_id=289774  sim=0.1745
+  rank=01  doctor_id=330816  sim=0.3249  name=دکتر عهدیه عیسی زاده
+  rank=02  doctor_id=339540  sim=0.2238  name=دکتر فرناز عراقی
+  rank=03  doctor_id=330947  sim=0.1947  name=دکتر وحید ظفرمند صدیق
+  rank=04  doctor_id=199190  sim=0.1899  name=دکتر پروانه ساکت
+  rank=05  doctor_id=289774  sim=0.1745  name=دکتر محمدحسن شاه وردی
 
 query_raw=میگرن
 query_preprocessed=میگرن
@@ -76,11 +78,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('میگرن', 1.0)]
 top5:
-  doctor_id=188603  sim=0.1187
-  doctor_id=114331  sim=0.0898
-  doctor_id=277985  sim=0.0880
-  doctor_id=293297  sim=0.0875
-  doctor_id=116613  sim=0.0863
+  rank=01  doctor_id=188603  sim=0.1187  name=دکتر مهران شفیعی
+  rank=02  doctor_id=114331  sim=0.0898  name=دکتر مجتبی خاکپور
+  rank=03  doctor_id=277985  sim=0.0880  name=دکتر ساناز معصومی
+  rank=04  doctor_id=293297  sim=0.0875  name=دکتر سوزان رحیمی
+  rank=05  doctor_id=116613  sim=0.0863  name=دکتر حمیدرضا رخصت یزدی
 
 query_raw=اگزما
 query_preprocessed=اگزما
@@ -91,11 +93,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('اگزما', 1.0)]
 top5:
-  doctor_id=235937  sim=0.0973
-  doctor_id=238666  sim=0.0889
-  doctor_id=324677  sim=0.0845
-  doctor_id=330947  sim=0.0771
-  doctor_id=289774  sim=0.0742
+  rank=01  doctor_id=235937  sim=0.0973  name=دکتر نسیبه برزکار
+  rank=02  doctor_id=238666  sim=0.0889  name=دکتر سعید شفیعیان
+  rank=03  doctor_id=324677  sim=0.0845  name=دکتر سمیه صادقی
+  rank=04  doctor_id=330947  sim=0.0771  name=دکتر وحید ظفرمند صدیق
+  rank=05  doctor_id=289774  sim=0.0742  name=دکتر محمدحسن شاه وردی
 
 query_raw=جوش صورت
 query_preprocessed=جوش صورت
@@ -106,11 +108,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('جوش صورت', 0.6483601204297835), ('جوش', 0.5908227833156288), ('صورت', 0.4801641312628943)]
 top5:
-  doctor_id=331363  sim=0.1860
-  doctor_id=199190  sim=0.1694
-  doctor_id=327663  sim=0.1570
-  doctor_id=325578  sim=0.1559
-  doctor_id=100246  sim=0.1554
+  rank=01  doctor_id=331363  sim=0.1860  name=دکتر سولماز نخعی زاده
+  rank=02  doctor_id=199190  sim=0.1694  name=دکتر پروانه ساکت
+  rank=03  doctor_id=327663  sim=0.1570  name=دکتر نفیسه یزدانیان
+  rank=04  doctor_id=325578  sim=0.1559  name=دکتر ناهید نیکخواه
+  rank=05  doctor_id=100246  sim=0.1554  name=دکتر علیرضا تقی زاده
 
 query_raw=تست پاپ اسمیر
 query_preprocessed=تست پاپ اسمیر
@@ -121,11 +123,11 @@ oov=[]
 query_vector_nnz=5
 query_top_terms=[('تست پاپ', 0.4959949202202679), ('پاپ اسمیر', 0.44945668794682025), ('اسمیر', 0.4462712168548315), ('پاپ', 0.4431663993282441), ('تست', 0.39550381577035615)]
 top5:
-  doctor_id=322582  sim=0.3285
-  doctor_id=341155  sim=0.1794
-  doctor_id=325366  sim=0.1603
-  doctor_id=320197  sim=0.1451
-  doctor_id=319817  sim=0.1382
+  rank=01  doctor_id=322582  sim=0.3285  name=دکتر مریم فرزان مهر
+  rank=02  doctor_id=341155  sim=0.1794  name=دکتر زهرا سادات سبزپوشان
+  rank=03  doctor_id=325366  sim=0.1603  name=دکتر مریم السادات شریفی
+  rank=04  doctor_id=320197  sim=0.1451  name=دکتر سوسن رضائی
+  rank=05  doctor_id=319817  sim=0.1382  name=دکتر اعظم حسینی
 
 query_raw=HPV
 query_preprocessed=HPV
@@ -136,11 +138,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('hpv', 1.0)]
 top5:
-  doctor_id=225341  sim=0.0768
-  doctor_id=250114  sim=0.0678
-  doctor_id=116621  sim=0.0654
-  doctor_id=335504  sim=0.0638
-  doctor_id=257364  sim=0.0607
+  rank=01  doctor_id=225341  sim=0.0768  name=دکتر آمیتا گوران
+  rank=02  doctor_id=250114  sim=0.0678  name=دکتر حسین کرامتی
+  rank=03  doctor_id=116621  sim=0.0654  name=دکتر فاطمه چراغی
+  rank=04  doctor_id=335504  sim=0.0638  name=دکتر کیانا صادقی
+  rank=05  doctor_id=257364  sim=0.0607  name=دکتر سیدشهاب الدین ایزدی
 
 query_raw=MRI گردن
 query_preprocessed=MRI گردن
@@ -151,11 +153,11 @@ oov=['mri گردن']
 query_vector_nnz=2
 query_top_terms=[('mri', 0.8629759461659389), ('گردن', 0.5052450062484564)]
 top5:
-  doctor_id=341016  sim=0.0853
-  doctor_id=117167  sim=0.0825
-  doctor_id=213003  sim=0.0745
-  doctor_id=105599  sim=0.0684
-  doctor_id=217774  sim=0.0617
+  rank=01  doctor_id=341016  sim=0.0853  name=دکتر سید روح الله حسینی
+  rank=02  doctor_id=117167  sim=0.0825  name=دکتر رضا شیروانی بختیاری
+  rank=03  doctor_id=213003  sim=0.0745  name=دکتر قاسم اسحاقی
+  rank=04  doctor_id=105599  sim=0.0684  name=دکتر محمد جعفری
+  rank=05  doctor_id=217774  sim=0.0617  name=دکتر علیرضا رادین مجد
 
 query_raw=PRP زانو
 query_preprocessed=PRP زانو
@@ -166,11 +168,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('prp زانو', 0.7548144410260337), ('prp', 0.5629217688928749), ('زانو', 0.3367109171456621)]
 top5:
-  doctor_id=114802  sim=0.0814
-  doctor_id=238544  sim=0.0788
-  doctor_id=321209  sim=0.0709
-  doctor_id=323225  sim=0.0708
-  doctor_id=110102  sim=0.0688
+  rank=01  doctor_id=114802  sim=0.0814  name=دکتر نیما محسنی
+  rank=02  doctor_id=238544  sim=0.0788  name=دکتر احمد رمضانپور اصل
+  rank=03  doctor_id=321209  sim=0.0709  name=دکتر جمشید ایمانی
+  rank=04  doctor_id=323225  sim=0.0708  name=دکتر بهنام نصیری
+  rank=05  doctor_id=110102  sim=0.0688  name=دکتر پیمان کاظمی
 
 query_raw=تنگی کانال نخاعی
 query_preprocessed=تنگی کانال نخاعی
@@ -181,11 +183,11 @@ oov=[]
 query_vector_nnz=5
 query_top_terms=[('کانال نخاعی', 0.5268564832070557), ('نخاعی', 0.4996923050350532), ('تنگی کانال', 0.4295489656231446), ('کانال', 0.40808051343336876), ('تنگی', 0.34883782346456277)]
 top5:
-  doctor_id=325844  sim=0.1700
-  doctor_id=242223  sim=0.1479
-  doctor_id=310364  sim=0.1329
-  doctor_id=258576  sim=0.1315
-  doctor_id=317925  sim=0.1313
+  rank=01  doctor_id=325844  sim=0.1700  name=دکتر حنان ابراهیمی
+  rank=02  doctor_id=242223  sim=0.1479  name=دکتر سیدسینا احمدی ابهری
+  rank=03  doctor_id=310364  sim=0.1329  name=دکتر محمدرضا گمرکی
+  rank=04  doctor_id=258576  sim=0.1315  name=دکتر کیسان موذنی
+  rank=05  doctor_id=317925  sim=0.1313  name=دکتر معراج فروغی اصل
 
 query_raw=آندوسکوپی بینی
 query_preprocessed=آندوسکوپی بینی
@@ -196,11 +198,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('آندوسکوپی بینی', 0.7401412166926709), ('آندوسکوپی', 0.5965066364600441), ('بینی', 0.3104364862766903)]
 top5:
-  doctor_id=326196  sim=0.1115
-  doctor_id=318816  sim=0.0980
-  doctor_id=319524  sim=0.0825
-  doctor_id=303951  sim=0.0800
-  doctor_id=280810  sim=0.0767
+  rank=01  doctor_id=326196  sim=0.1115  name=دکتر الناز شریعت پناهی
+  rank=02  doctor_id=318816  sim=0.0980  name=دکتر سمانه زند
+  rank=03  doctor_id=319524  sim=0.0825  name=دکتر آیه ترقی
+  rank=04  doctor_id=303951  sim=0.0800  name=دکتر متین قاضی زاده
+  rank=05  doctor_id=280810  sim=0.0767  name=دکتر زینب باقری
 
 ========================================================================
 SET=service  size=8
@@ -214,11 +216,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('حوصله', 1.0)]
 top5:
-  doctor_id=343073  sim=0.3263
-  doctor_id=344336  sim=0.1104
-  doctor_id=342296  sim=0.0739
-  doctor_id=323556  sim=0.0714
-  doctor_id=333498  sim=0.0681
+  rank=01  doctor_id=343073  sim=0.3263  name=دکتر زهرا بیگم موسوی
+  rank=02  doctor_id=344336  sim=0.1104  name=دکتر ماجد غفاری
+  rank=03  doctor_id=342296  sim=0.0739  name=دکتر زهرا کرباسی
+  rank=04  doctor_id=323556  sim=0.0714  name=دکتر فاطمه دیانتی تیلکی
+  rank=05  doctor_id=333498  sim=0.0681  name=دکتر مولود رایانی
 
 query_raw=وقت شناس
 query_preprocessed=وقت‌شناس
@@ -229,11 +231,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('وقت\u200cشناس', 1.0)]
 top5:
-  doctor_id=331887  sim=0.0929
-  doctor_id=322409  sim=0.0586
-  doctor_id=314185  sim=0.0505
-  doctor_id=211804  sim=0.0448
-  doctor_id=238052  sim=0.0363
+  rank=01  doctor_id=331887  sim=0.0929  name=دکتر میلاد باسفهرجانی
+  rank=02  doctor_id=322409  sim=0.0586  name=دکتر سهند کیا
+  rank=03  doctor_id=314185  sim=0.0505  name=دکتر زهرا کریمی
+  rank=04  doctor_id=211804  sim=0.0448  name=دکتر سارا ساعدی
+  rank=05  doctor_id=238052  sim=0.0363  name=دکتر محمد نژادحسینیان
 
 query_raw=بد برخورد
 query_preprocessed=بد برخورد
@@ -244,11 +246,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('بد برخورد', 0.9092919207684814), ('بد', 0.354661141929168), ('برخورد', 0.21772385544690404)]
 top5:
-  doctor_id=129353  sim=0.0560
-  doctor_id=116613  sim=0.0514
-  doctor_id=238538  sim=0.0308
-  doctor_id=228021  sim=0.0285
-  doctor_id=239867  sim=0.0260
+  rank=01  doctor_id=129353  sim=0.0560  name=دکتر سمیه سالکی
+  rank=02  doctor_id=116613  sim=0.0514  name=دکتر حمیدرضا رخصت یزدی
+  rank=03  doctor_id=238538  sim=0.0308  name=دکتر سمانه وطن دوست
+  rank=04  doctor_id=228021  sim=0.0285  name=مرکز فوق تخصصی تهران ارتوپدی
+  rank=05  doctor_id=239867  sim=0.0260  name=دکتر سیدپیمان پورموسوی
 
 query_raw=معطلی زیاد
 query_preprocessed=معطلی
@@ -259,11 +261,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('معطلی', 1.0)]
 top5:
-  doctor_id=327151  sim=0.0590
-  doctor_id=331887  sim=0.0538
-  doctor_id=277985  sim=0.0449
-  doctor_id=210903  sim=0.0436
-  doctor_id=323343  sim=0.0426
+  rank=01  doctor_id=327151  sim=0.0590  name=دکتر مریم قنبری
+  rank=02  doctor_id=331887  sim=0.0538  name=دکتر میلاد باسفهرجانی
+  rank=03  doctor_id=277985  sim=0.0449  name=دکتر ساناز معصومی
+  rank=04  doctor_id=210903  sim=0.0436  name=دکتر مهرشاد رابط
+  rank=05  doctor_id=323343  sim=0.0426  name=دکتر فرشته نصیری
 
 query_raw=نوبت دهی افتضاح
 query_preprocessed=نوبت دهی افتضاح
@@ -274,11 +276,11 @@ oov=['افتضاح', 'دهی افتضاح']
 query_vector_nnz=3
 query_top_terms=[('نوبت دهی', 0.6679952730995666), ('دهی', 0.6255296393534586), ('نوبت', 0.403106667529783)]
 top5:
-  doctor_id=105809  sim=0.0906
-  doctor_id=328035  sim=0.0695
-  doctor_id=298923  sim=0.0693
-  doctor_id=186837  sim=0.0681
-  doctor_id=330891  sim=0.0669
+  rank=01  doctor_id=105809  sim=0.0906  name=دکتر مجید کاظمی
+  rank=02  doctor_id=328035  sim=0.0695  name=دکتر رویا ساعد پناه
+  rank=03  doctor_id=298923  sim=0.0693  name=دکتر محمد جواد فرج پور خاناپشتانی
+  rank=04  doctor_id=186837  sim=0.0681  name=دکتر بهناز عطارشاکری
+  rank=05  doctor_id=330891  sim=0.0669  name=دکتر ابوالقاسم حیدری
 
 query_raw=پاسخگو نبودن مطب
 query_preprocessed=پاسخگو نبودن مطب
@@ -289,11 +291,11 @@ oov=['پاسخگو نبودن', 'نبودن مطب']
 query_vector_nnz=3
 query_top_terms=[('نبودن', 0.7343172325522007), ('پاسخگو', 0.5939902887048891), ('مطب', 0.32856314294387867)]
 top5:
-  doctor_id=222252  sim=0.0716
-  doctor_id=330694  sim=0.0636
-  doctor_id=128467  sim=0.0558
-  doctor_id=335234  sim=0.0460
-  doctor_id=255219  sim=0.0412
+  rank=01  doctor_id=222252  sim=0.0716  name=دکتر رکسانا رحمتیان
+  rank=02  doctor_id=330694  sim=0.0636  name=دکتر محمد حکیم الهی
+  rank=03  doctor_id=128467  sim=0.0558  name=دکتر شیوا امامی
+  rank=04  doctor_id=335234  sim=0.0460  name=دکتر یاسمن کبیر
+  rank=05  doctor_id=255219  sim=0.0412  name=دکتر سارا نیک فرجام
 
 query_raw=هزینه بالا
 query_preprocessed=هزینه
@@ -304,11 +306,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('هزینه', 1.0)]
 top5:
-  doctor_id=208588  sim=0.0512
-  doctor_id=110145  sim=0.0473
-  doctor_id=128304  sim=0.0453
-  doctor_id=253198  sim=0.0437
-  doctor_id=335350  sim=0.0414
+  rank=01  doctor_id=208588  sim=0.0512  name=دکتر عباس بهراد
+  rank=02  doctor_id=110145  sim=0.0473  name=دکتر محمدسعید سعیدیان
+  rank=03  doctor_id=128304  sim=0.0453  name=دکتر پیمان کاغذیان
+  rank=04  doctor_id=253198  sim=0.0437  name=دکتر مجید محسنی کبیر
+  rank=05  doctor_id=335350  sim=0.0414  name=دکتر مهروز امیرحیدری
 
 query_raw=تشخیص اشتباه
 query_preprocessed=تشخیص اشتباه
@@ -319,11 +321,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('تشخیص اشتباه', 0.7526381221664864), ('اشتباه', 0.6323632265772247), ('تشخیص', 0.18344646830764305)]
 top5:
-  doctor_id=341016  sim=0.1538
-  doctor_id=111550  sim=0.0723
-  doctor_id=305849  sim=0.0722
-  doctor_id=239867  sim=0.0711
-  doctor_id=113224  sim=0.0553
+  rank=01  doctor_id=341016  sim=0.1538  name=دکتر سید روح الله حسینی
+  rank=02  doctor_id=111550  sim=0.0723  name=دکتر امیررضا صباح
+  rank=03  doctor_id=305849  sim=0.0722  name=دکتر بیتا ساقی
+  rank=04  doctor_id=239867  sim=0.0711  name=دکتر سیدپیمان پورموسوی
+  rank=05  doctor_id=113224  sim=0.0553  name=دکتر ناصر آل اسحاق
 
 ========================================================================
 SET=procedures  size=9
@@ -337,11 +339,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('سزارین', 1.0)]
 top5:
-  doctor_id=341741  sim=0.1325
-  doctor_id=190449  sim=0.1114
-  doctor_id=322898  sim=0.1008
-  doctor_id=339585  sim=0.0968
-  doctor_id=293689  sim=0.0937
+  rank=01  doctor_id=341741  sim=0.1325  name=دکتر شقایق معشوری
+  rank=02  doctor_id=190449  sim=0.1114  name=دکتر لیلا سلطانی
+  rank=03  doctor_id=322898  sim=0.1008  name=دکتر سولماز هدایت
+  rank=04  doctor_id=339585  sim=0.0968  name=دکتر لاله نیک پی
+  rank=05  doctor_id=293689  sim=0.0937  name=دکتر ناهید همت یار
 
 query_raw=زایمان طبیعی
 query_preprocessed=زایمان طبیعی
@@ -352,11 +354,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('زایمان طبیعی', 0.7071435714198921), ('طبیعی', 0.5231910347343035), ('زایمان', 0.4756249684080606)]
 top5:
-  doctor_id=300138  sim=0.1806
-  doctor_id=178917  sim=0.1260
-  doctor_id=119857  sim=0.1221
-  doctor_id=190449  sim=0.1192
-  doctor_id=180186  sim=0.1115
+  rank=01  doctor_id=300138  sim=0.1806  name=دکتر لیدا شفیعیان
+  rank=02  doctor_id=178917  sim=0.1260  name=دکتر پریسا مقتدایی
+  rank=03  doctor_id=119857  sim=0.1221  name=دکتر مریم انصاف گو
+  rank=04  doctor_id=190449  sim=0.1192  name=دکتر لیلا سلطانی
+  rank=05  doctor_id=180186  sim=0.1115  name=دکتر فاطمه محرابی
 
 query_raw=سرکلاژ
 query_preprocessed=سرکلاژ
@@ -367,11 +369,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('سرکلاژ', 1.0)]
 top5:
-  doctor_id=259527  sim=0.0725
-  doctor_id=113544  sim=0.0608
-  doctor_id=289583  sim=0.0459
-  doctor_id=232465  sim=0.0427
-  doctor_id=318892  sim=0.0000
+  rank=01  doctor_id=259527  sim=0.0725  name=دکتر سهیلا درزی خلردی
+  rank=02  doctor_id=113544  sim=0.0608  name=دکتر سحر محرابی
+  rank=03  doctor_id=289583  sim=0.0459  name=دکتر فریده حسین زاده
+  rank=04  doctor_id=232465  sim=0.0427  name=دکتر سارا میرپنجی
+  rank=05  doctor_id=318892  sim=0.0000  name=دکتر رضا بابایی
 
 query_raw=لاپاراسکوپی
 query_preprocessed=لاپاراسکوپی
@@ -382,11 +384,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('لاپاراسکوپی', 1.0)]
 top5:
-  doctor_id=246570  sim=0.1361
-  doctor_id=130745  sim=0.0934
-  doctor_id=302119  sim=0.0724
-  doctor_id=320397  sim=0.0692
-  doctor_id=114966  sim=0.0668
+  rank=01  doctor_id=246570  sim=0.1361  name=دکتر بیتا طهماسبی
+  rank=02  doctor_id=130745  sim=0.0934  name=دکتر گیتی سیدقیاسی
+  rank=03  doctor_id=302119  sim=0.0724  name=دکتر مینودخت باورساد کریمی
+  rank=04  doctor_id=320397  sim=0.0692  name=دکتر مروارید احمدبیگی
+  rank=05  doctor_id=114966  sim=0.0668  name=دکتر احمدرضا رفعتی
 
 query_raw=عمل لوزه
 query_preprocessed=عمل لوزه
@@ -397,11 +399,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('عمل لوزه', 0.7108188567691441), ('لوزه', 0.639641060223067), ('عمل', 0.29256771342394833)]
 top5:
-  doctor_id=327436  sim=0.2321
-  doctor_id=320000  sim=0.2277
-  doctor_id=322198  sim=0.1957
-  doctor_id=319524  sim=0.1939
-  doctor_id=273581  sim=0.1923
+  rank=01  doctor_id=327436  sim=0.2321  name=دکتر علیرضا برق
+  rank=02  doctor_id=320000  sim=0.2277  name=دکتر مینا جمالی
+  rank=03  doctor_id=322198  sim=0.1957  name=دکتر سیدعلی عقیلی
+  rank=04  doctor_id=319524  sim=0.1939  name=دکتر آیه ترقی
+  rank=05  doctor_id=273581  sim=0.1923  name=دکتر ساسان مسلمی
 
 query_raw=لیزر پوست
 query_preprocessed=لیزر پوست
@@ -412,11 +414,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('لیزر پوست', 0.8263009159967735), ('پوست', 0.4079032649281205), ('لیزر', 0.3883834737522603)]
 top5:
-  doctor_id=309021  sim=0.0960
-  doctor_id=331420  sim=0.0948
-  doctor_id=264228  sim=0.0846
-  doctor_id=309225  sim=0.0815
-  doctor_id=341725  sim=0.0783
+  rank=01  doctor_id=309021  sim=0.0960  name=دکتر محمود سهرابی
+  rank=02  doctor_id=331420  sim=0.0948  name=دکتر حسین احمدی
+  rank=03  doctor_id=264228  sim=0.0846  name=دکتر ربابه غیبی
+  rank=04  doctor_id=309225  sim=0.0815  name=دکتر خلیل فارسی نژاد
+  rank=05  doctor_id=341725  sim=0.0783  name=دکتر درین مقصودلو
 
 query_raw=تعویض مفصل زانو
 query_preprocessed=تعویض مفصل زانو
@@ -427,11 +429,11 @@ oov=[]
 query_vector_nnz=5
 query_top_terms=[('مفصل زانو', 0.5015574225942654), ('تعویض مفصل', 0.46809093714714645), ('تعویض', 0.4472648205785414), ('مفصل', 0.4290676222167303), ('زانو', 0.3810330461251755)]
 top5:
-  doctor_id=319788  sim=0.2278
-  doctor_id=234702  sim=0.2125
-  doctor_id=320341  sim=0.2106
-  doctor_id=125199  sim=0.1897
-  doctor_id=289334  sim=0.1890
+  rank=01  doctor_id=319788  sim=0.2278  name=دکتر علیرضا عسکری
+  rank=02  doctor_id=234702  sim=0.2125  name=دکتر امیرحسین مجدی
+  rank=03  doctor_id=320341  sim=0.2106  name=دکتر امیر برزنونی
+  rank=04  doctor_id=125199  sim=0.1897  name=دکتر مازیار نفیسی
+  rank=05  doctor_id=289334  sim=0.1890  name=دکتر مهرداد کریمی
 
 query_raw=جراحی دیسک کمر
 query_preprocessed=جراحی دیسک کمر
@@ -442,11 +444,11 @@ oov=[]
 query_vector_nnz=5
 query_top_terms=[('جراحی دیسک', 0.6659162441126578), ('دیسک کمر', 0.4307241843278817), ('دیسک', 0.40544050279078436), ('کمر', 0.3867164840706803), ('جراحی', 0.23895730268552015)]
 top5:
-  doctor_id=268719  sim=0.1724
-  doctor_id=320533  sim=0.1714
-  doctor_id=335493  sim=0.1713
-  doctor_id=261269  sim=0.1570
-  doctor_id=126058  sim=0.1561
+  rank=01  doctor_id=268719  sim=0.1724  name=دکتر مرتضی اشرافی
+  rank=02  doctor_id=320533  sim=0.1714  name=دکتر حامد جوادیان
+  rank=03  doctor_id=335493  sim=0.1713  name=دکتر کامکار آیین فر
+  rank=04  doctor_id=261269  sim=0.1570  name=دکتر مهران آرمان فر
+  rank=05  doctor_id=126058  sim=0.1561  name=دکتر فرشاد شالچی
 
 query_raw=سنگ شکن کلیه
 query_preprocessed=سنگ‌شکن کلیه
@@ -457,11 +459,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('سنگ\u200cشکن کلیه', 0.7514857425283868), ('سنگ\u200cشکن', 0.5413750789125404), ('کلیه', 0.3770705540200662)]
 top5:
-  doctor_id=293669  sim=0.2429
-  doctor_id=314638  sim=0.1349
-  doctor_id=256556  sim=0.0949
-  doctor_id=241599  sim=0.0928
-  doctor_id=301319  sim=0.0856
+  rank=01  doctor_id=293669  sim=0.2429  name=دکتر الهام تهرانی پور
+  rank=02  doctor_id=314638  sim=0.1349  name=دکتر کاوه مهرآوران
+  rank=03  doctor_id=256556  sim=0.0949  name=دکتر فرشاد گوران
+  rank=04  doctor_id=241599  sim=0.0928  name=دکتر عرفان جلوه مقدم
+  rank=05  doctor_id=301319  sim=0.0856  name=دکتر محمد کمالی
 
 ========================================================================
 SET=two_word_variants  size=11
@@ -475,11 +477,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('زایمان', 1.0)]
 top5:
-  doctor_id=341741  sim=0.1367
-  doctor_id=322582  sim=0.1351
-  doctor_id=190449  sim=0.1324
-  doctor_id=202344  sim=0.1312
-  doctor_id=173581  sim=0.1161
+  rank=01  doctor_id=341741  sim=0.1367  name=دکتر شقایق معشوری
+  rank=02  doctor_id=322582  sim=0.1351  name=دکتر مریم فرزان مهر
+  rank=03  doctor_id=190449  sim=0.1324  name=دکتر لیلا سلطانی
+  rank=04  doctor_id=202344  sim=0.1312  name=دکتر مژگان بیک زاده
+  rank=05  doctor_id=173581  sim=0.1161  name=دکتر پروین همتی
 
 query_raw=مراقبت زایمان
 query_preprocessed=مراقبت زایمان
@@ -490,11 +492,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('مراقبت زایمان', 0.8089886250584597), ('مراقبت', 0.4457079977979685), ('زایمان', 0.3832515952020932)]
 top5:
-  doctor_id=322582  sim=0.2294
-  doctor_id=205627  sim=0.0784
-  doctor_id=341741  sim=0.0764
-  doctor_id=129353  sim=0.0745
-  doctor_id=173496  sim=0.0661
+  rank=01  doctor_id=322582  sim=0.2294  name=دکتر مریم فرزان مهر
+  rank=02  doctor_id=205627  sim=0.0784  name=دکتر فاطمه نیک پور
+  rank=03  doctor_id=341741  sim=0.0764  name=دکتر شقایق معشوری
+  rank=04  doctor_id=129353  sim=0.0745  name=دکتر سمیه سالکی
+  rank=05  doctor_id=173496  sim=0.0661  name=دکتر نازیلا نوری
 
 query_raw=مراقبت پس از زایمان
 query_preprocessed=مراقبت زایمان
@@ -505,11 +507,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('مراقبت زایمان', 0.8089886250584597), ('مراقبت', 0.4457079977979685), ('زایمان', 0.3832515952020932)]
 top5:
-  doctor_id=322582  sim=0.2294
-  doctor_id=205627  sim=0.0784
-  doctor_id=341741  sim=0.0764
-  doctor_id=129353  sim=0.0745
-  doctor_id=173496  sim=0.0661
+  rank=01  doctor_id=322582  sim=0.2294  name=دکتر مریم فرزان مهر
+  rank=02  doctor_id=205627  sim=0.0784  name=دکتر فاطمه نیک پور
+  rank=03  doctor_id=341741  sim=0.0764  name=دکتر شقایق معشوری
+  rank=04  doctor_id=129353  sim=0.0745  name=دکتر سمیه سالکی
+  rank=05  doctor_id=173496  sim=0.0661  name=دکتر نازیلا نوری
 
 query_raw=درد زانو
 query_preprocessed=درد زانو
@@ -520,11 +522,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('درد زانو', 0.7019852890527895), ('زانو', 0.6206312344711118), ('درد', 0.34933297117840933)]
 top5:
-  doctor_id=323225  sim=0.2986
-  doctor_id=329407  sim=0.2147
-  doctor_id=319788  sim=0.1575
-  doctor_id=256303  sim=0.1567
-  doctor_id=107871  sim=0.1387
+  rank=01  doctor_id=323225  sim=0.2986  name=دکتر بهنام نصیری
+  rank=02  doctor_id=329407  sim=0.2147  name=دکتر رسول خوشبخت
+  rank=03  doctor_id=319788  sim=0.1575  name=دکتر علیرضا عسکری
+  rank=04  doctor_id=256303  sim=0.1567  name=دکتر حامد احمدی زاده
+  rank=05  doctor_id=107871  sim=0.1387  name=دکتر رحمت اله آزادی
 
 query_raw=درد زانو راه رفتن
 query_preprocessed=درد زانو رفتن
@@ -535,11 +537,11 @@ oov=['زانو رفتن']
 query_vector_nnz=4
 query_top_terms=[('درد زانو', 0.5940303196351188), ('رفتن', 0.532841968803809), ('زانو', 0.5251873170816383), ('درد', 0.2956107197177904)]
 top5:
-  doctor_id=323225  sim=0.2527
-  doctor_id=329407  sim=0.1817
-  doctor_id=319788  sim=0.1333
-  doctor_id=256303  sim=0.1326
-  doctor_id=109296  sim=0.1242
+  rank=01  doctor_id=323225  sim=0.2527  name=دکتر بهنام نصیری
+  rank=02  doctor_id=329407  sim=0.1817  name=دکتر رسول خوشبخت
+  rank=03  doctor_id=319788  sim=0.1333  name=دکتر علیرضا عسکری
+  rank=04  doctor_id=256303  sim=0.1326  name=دکتر حامد احمدی زاده
+  rank=05  doctor_id=109296  sim=0.1242  name=دکتر سینا امینی زاده
 
 query_raw=سنگ کلیه
 query_preprocessed=سنگ کلیه
@@ -550,11 +552,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('سنگ کلیه', 0.5998780959891242), ('کلیه', 0.5698037099222213), ('سنگ', 0.5616671631058169)]
 top5:
-  doctor_id=301319  sim=0.3661
-  doctor_id=315482  sim=0.2778
-  doctor_id=249879  sim=0.2675
-  doctor_id=311174  sim=0.2525
-  doctor_id=293669  sim=0.2517
+  rank=01  doctor_id=301319  sim=0.3661  name=دکتر محمد کمالی
+  rank=02  doctor_id=315482  sim=0.2778  name=دکتر ابراهیم رسولیان هروی
+  rank=03  doctor_id=249879  sim=0.2675  name=دکتر رضا سرهنگ نژاد
+  rank=04  doctor_id=311174  sim=0.2525  name=دکتر امیررضا عابدی
+  rank=05  doctor_id=293669  sim=0.2517  name=دکتر الهام تهرانی پور
 
 query_raw=درد سنگ کلیه
 query_preprocessed=درد سنگ کلیه
@@ -565,11 +567,11 @@ oov=[]
 query_vector_nnz=5
 query_top_terms=[('درد سنگ', 0.7386600168933396), ('سنگ کلیه', 0.3901972435252036), ('کلیه', 0.37063503143164667), ('سنگ', 0.36534252590293614), ('درد', 0.17686718980915833)]
 top5:
-  doctor_id=301319  sim=0.2382
-  doctor_id=249879  sim=0.1824
-  doctor_id=315482  sim=0.1807
-  doctor_id=293669  sim=0.1692
-  doctor_id=241599  sim=0.1671
+  rank=01  doctor_id=301319  sim=0.2382  name=دکتر محمد کمالی
+  rank=02  doctor_id=249879  sim=0.1824  name=دکتر رضا سرهنگ نژاد
+  rank=03  doctor_id=315482  sim=0.1807  name=دکتر ابراهیم رسولیان هروی
+  rank=04  doctor_id=293669  sim=0.1692  name=دکتر الهام تهرانی پور
+  rank=05  doctor_id=241599  sim=0.1671  name=دکتر عرفان جلوه مقدم
 
 query_raw=پارگی رباط
 query_preprocessed=پارگی رباط
@@ -580,11 +582,11 @@ oov=[]
 query_vector_nnz=3
 query_top_terms=[('پارگی رباط', 0.6523741398803246), ('رباط', 0.5726655877253519), ('پارگی', 0.49644950020176676)]
 top5:
-  doctor_id=191500  sim=0.1309
-  doctor_id=331151  sim=0.1227
-  doctor_id=239005  sim=0.1223
-  doctor_id=127062  sim=0.1182
-  doctor_id=179929  sim=0.1171
+  rank=01  doctor_id=191500  sim=0.1309  name=دکتر حسن درتاج
+  rank=02  doctor_id=331151  sim=0.1227  name=دکتر کیوان احمدی
+  rank=03  doctor_id=239005  sim=0.1223  name=دکتر مجید قربان زاده
+  rank=04  doctor_id=127062  sim=0.1182  name=دکتر ایمان قماشی
+  rank=05  doctor_id=179929  sim=0.1171  name=دکتر حمیدرضا اصلانی
 
 query_raw=پارگی رباط صلیبی
 query_preprocessed=پارگی رباط صلیبی
@@ -595,11 +597,11 @@ oov=[]
 query_vector_nnz=5
 query_top_terms=[('پارگی رباط', 0.48401687069263705), ('رباط صلیبی', 0.47546549629313006), ('صلیبی', 0.47272648832391534), ('رباط', 0.4248785915625536), ('پارگی', 0.36833148166888263)]
 top5:
-  doctor_id=239005  sim=0.1637
-  doctor_id=127062  sim=0.1595
-  doctor_id=112956  sim=0.1525
-  doctor_id=179929  sim=0.1484
-  doctor_id=125199  sim=0.1465
+  rank=01  doctor_id=239005  sim=0.1637  name=دکتر مجید قربان زاده
+  rank=02  doctor_id=127062  sim=0.1595  name=دکتر ایمان قماشی
+  rank=03  doctor_id=112956  sim=0.1525  name=دکتر بهزاد حنفی زاده
+  rank=04  doctor_id=179929  sim=0.1484  name=دکتر حمیدرضا اصلانی
+  rank=05  doctor_id=125199  sim=0.1465  name=دکتر مازیار نفیسی
 
 query_raw=با حوصله
 query_preprocessed=حوصله
@@ -610,11 +612,11 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('حوصله', 1.0)]
 top5:
-  doctor_id=343073  sim=0.3263
-  doctor_id=344336  sim=0.1104
-  doctor_id=342296  sim=0.0739
-  doctor_id=323556  sim=0.0714
-  doctor_id=333498  sim=0.0681
+  rank=01  doctor_id=343073  sim=0.3263  name=دکتر زهرا بیگم موسوی
+  rank=02  doctor_id=344336  sim=0.1104  name=دکتر ماجد غفاری
+  rank=03  doctor_id=342296  sim=0.0739  name=دکتر زهرا کرباسی
+  rank=04  doctor_id=323556  sim=0.0714  name=دکتر فاطمه دیانتی تیلکی
+  rank=05  doctor_id=333498  sim=0.0681  name=دکتر مولود رایانی
 
 query_raw=خیلی با حوصله
 query_preprocessed=حوصله
@@ -625,15 +627,49 @@ oov=[]
 query_vector_nnz=1
 query_top_terms=[('حوصله', 1.0)]
 top5:
-  doctor_id=343073  sim=0.3263
-  doctor_id=344336  sim=0.1104
-  doctor_id=342296  sim=0.0739
-  doctor_id=323556  sim=0.0714
-  doctor_id=333498  sim=0.0681
+  rank=01  doctor_id=343073  sim=0.3263  name=دکتر زهرا بیگم موسوی
+  rank=02  doctor_id=344336  sim=0.1104  name=دکتر ماجد غفاری
+  rank=03  doctor_id=342296  sim=0.0739  name=دکتر زهرا کرباسی
+  rank=04  doctor_id=323556  sim=0.0714  name=دکتر فاطمه دیانتی تیلکی
+  rank=05  doctor_id=333498  sim=0.0681  name=دکتر مولود رایانی
 
 ========================================================================
-SUMMARY
+SUMMARY (overall)
 ========================================================================
 queries_total=41
+queries_empty_after_variant_preproc=0 (0.0%)
 queries_with_nnz_0=0 (0.0%)
 queries_with_top1_sim_0=0 (0.0%)
+terms_total=117
+terms_oov_total=6 (5.1%)
+
+========================================================================
+SUMMARY (per set)
+========================================================================
+SET=medical
+  queries=13
+  empty_after_variant_preproc=0 (0.0%)
+  nnz_0=0 (0.0%)
+  top1_sim_0=0 (0.0%)
+  oov_terms_ratio=2.6%
+
+SET=service
+  queries=8
+  empty_after_variant_preproc=0 (0.0%)
+  nnz_0=0 (0.0%)
+  top1_sim_0=0 (0.0%)
+  oov_terms_ratio=20.0%
+
+SET=procedures
+  queries=9
+  empty_after_variant_preproc=0 (0.0%)
+  nnz_0=0 (0.0%)
+  top1_sim_0=0 (0.0%)
+  oov_terms_ratio=0.0%
+
+SET=two_word_variants
+  queries=11
+  empty_after_variant_preproc=0 (0.0%)
+  nnz_0=0 (0.0%)
+  top1_sim_0=0 (0.0%)
+  oov_terms_ratio=3.0%
