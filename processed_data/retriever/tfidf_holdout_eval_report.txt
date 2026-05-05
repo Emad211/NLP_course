@@ -1,11 +1,34 @@
-TF-IDF DOCTOR RETRIEVER — HOLDOUT EVAL REPORT
-input=C:\Users\Emad Karimi\Desktop\کرالر نوبت\processed_data\final\comments_for_tfidf_retriever.csv
-doctors_train_corpus=535
-train_rows=50,960
-test_rows=12,746
-queries_evaluated=12,746
+TF-IDF RETRIEVER — HOLDOUT EVAL REPORT (baseline)
+project_root=C:\Users\Emad Karimi\Desktop\for NLP course
+input_comments_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\final\comments_for_tfidf_retriever.csv
+out_details_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\retriever\tfidf_holdout_eval_details.csv
+out_by_doctor_csv=C:\Users\Emad Karimi\Desktop\for NLP course\processed_data\retriever\tfidf_holdout_eval_by_doctor.csv
 
-recall@1=0.0282  (360/12,746)
-recall@3=0.0635  (810/12,746)
-recall@5=0.0890  (1,134/12,746)
-recall@10=0.1364  (1,738/12,746)
+CONFIG
+holdout_frac=0.2
+seed=42
+min_comments_per_doctor=5
+max_queries_per_doctor=50
+topk_list=[1, 5, 10, 20]
+
+COVERAGE
+rows_input_after_basic_filters=63,722
+doctors_dropped_too_few_comments=10
+doctors_in_corpus=535
+queries_total(sampled)=12,653
+queries_missing_doctor_in_corpus=0
+queries_evaluable=12,653
+queries_with_nnz_0=690 (5.5%)
+
+QUALITY (on effective queries: doctor in corpus AND nnz>0)
+effective_queries=11,963
+recall@1=0.0305
+recall@5=0.1004
+recall@10=0.1579
+recall@20=0.2463
+MRR=0.0777
+mean_rank=119.80
+median_rank=69.00
+
+tfidf_matrix_shape=535 x 29055
+seconds=3.84
