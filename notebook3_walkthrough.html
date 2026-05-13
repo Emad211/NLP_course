@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notebook 3 Walkthrough — TF-IDF Doctor Retriever</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+  :root {
+    --pri: #1a56db; --pri-l: #e8effc; --pri-d: #0f3a8e;
+    --ok: #059669; --ok-l: #d1fae5;
+    --warn: #d97706; --warn-l: #fef3c7;
+    --bg: #f8fafc; --card: #fff; --text: #1e293b; --text2: #64748b; --brd: #e2e8f0;
+    --code-bg: #0f172a; --code-t: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Vazirmatn', sans-serif; background: var(--bg); color: var(--text); line-height: 1.9; font-size: 14.5px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 24px 32px; }
+
+  /* Cover */
+  .cover { background: linear-gradient(135deg, #0f172a, #1e3a5f 50%, #1a56db); color: #fff; padding: 48px 36px; border-radius: 16px; margin-bottom: 32px; text-align: center; }
+  .cover h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+  .cover .sub { font-size: 16px; font-weight: 300; opacity: .85; margin-bottom: 6px; }
+  .cover .meta { font-size: 12px; opacity: .55; margin-top: 14px; }
+
+  /* Section */
+  .sec { background: var(--card); border: 1px solid var(--brd); border-radius: 12px; padding: 28px 32px; margin-bottom: 22px; }
+  .sec h2 { font-size: 18px; font-weight: 700; color: var(--pri-d); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 3px solid var(--pri); display: flex; align-items: center; gap: 10px; }
+  .sec h2 .n { background: var(--pri); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+  .sec h3 { font-size: 15px; font-weight: 600; color: var(--pri); margin: 18px 0 8px; }
+  .sec h4 { font-size: 14px; font-weight: 600; margin: 14px 0 6px; }
+  p, li { margin-bottom: 8px; }
+  ul { padding-right: 20px; }
+
+  /* Code */
+  pre { background: var(--code-bg); color: var(--code-t); border-radius: 8px; padding: 14px 18px; margin: 10px 0 14px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.7; direction: ltr; text-align: left; }
+  code { background: #f1f5f9; color: #be123c; padding: 1px 5px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 12.5px; direction: ltr; }
+  pre code { background: none; color: inherit; padding: 0; }
+  .cm { color: #6b7280; }
+  .kw { color: #818cf8; }
+  .st { color: #34d399; }
+  .fn { color: #60a5fa; }
+
+  /* Table */
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 13px; }
+  th { background: var(--pri); color: #fff; padding: 8px 12px; text-align: right; font-size: 12.5px; }
+  td { padding: 7px 12px; border-bottom: 1px solid var(--brd); vertical-align: top; }
+  tr:nth-child(even) { background: #f8fafc; }
+
+  /* Boxes */
+  .box { border-radius: 8px; padding: 14px 18px; margin: 10px 0; font-size: 13.5px; }
+  .box-ok { background: var(--ok-l); border-right: 4px solid var(--ok); }
+  .box-warn { background: var(--warn-l); border-right: 4px solid var(--warn); }
+  .box-info { background: var(--pri-l); border-right: 4px solid var(--pri); }
+  .box strong { display: block; margin-bottom: 4px; }
+
+  /* Cell indicator */
+  .cell { display: inline-flex; align-items: center; gap: 4px; background: #f1f5f9; border: 1px solid var(--brd); border-radius: 6px; padding: 2px 10px; font-size: 11px; color: var(--text2); margin-bottom: 6px; font-family: monospace; direction: ltr; }
+  .cell.md { border-color: #93c5fd; background: #eff6ff; }
+  .cell.py { border-color: #86efac; background: #f0fdf4; }
+
+  /* Flow */
+  .flow { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 14px 0; }
+  .flow-node { background: #fff; border: 2px solid var(--pri); border-radius: 8px; padding: 8px 20px; min-width: 300px; text-align: center; font-size: 13px; }
+  .flow-node.hl { background: var(--pri); color: #fff; font-weight: 600; }
+  .flow-node.ok { background: var(--ok); color: #fff; border-color: var(--ok); }
+  .flow-arr { font-size: 18px; color: var(--pri); margin: 1px 0; }
+  .flow-lbl { font-size: 11px; color: var(--text2); }
+
+  /* Formula */
+  .formula { background: #fffbeb; border: 2px solid #fbbf24; border-radius: 8px; padding: 14px 20px; margin: 12px 0; text-align: center; direction: ltr; font-family: 'Courier New', monospace; font-size: 14px; font-weight: 600; color: #92400e; }
+
+  /* Tags */
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 10.5px; font-weight: 600; }
+  .tag-b { background: #dbeafe; color: #1e40af; }
+  .tag-g { background: #d1fae5; color: #065f46; }
+  .tag-y { background: #fef3c7; color: #92400e; }
+  .tag-r { background: #fee2e2; color: #991b1b; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .two .col { background: #f8fafc; border: 1px solid var(--brd); border-radius: 8px; padding: 12px 16px; }
+
+  .sep { border: none; border-top: 2px dashed var(--brd); margin: 20px 0; }
+
+  @media print { body { font-size: 12px; } .wrap { padding: 0; } .sec { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ========== COVER ========== -->
+<div class="cover">
+  <h1>Notebook 3: TF-IDF Doctor Retriever</h1>
+  <div class="sub">Cell-by-Cell Walkthrough — ارائه روند آموزشی</div>
+  <div class="sub" style="font-size:14px; opacity:.75;">از سلول اول تا سلول آخر: ساختار، منطق، و توجیه هر تصمیم</div>
+  <div class="meta">63 سلول (28 Markdown آموزشی + 35 Code عملی) &nbsp;|&nbsp; 904 خط &nbsp;|&nbsp; 11 Part</div>
+</div>
+
+<!-- ========== OVERVIEW ========== -->
+<div class="sec">
+  <h2><span class="n">0</span> نمای کلی نوت‌بوک</h2>
+  <p>این نوت‌بوک دانشجو را از <strong>مفاهیم نظری TF-IDF</strong> (محاسبه دستی) تا <strong>ساخت یک سیستم بازیابی کامل</strong> با ارزیابی کمّی و کیفی پیش می‌برد. هر بخش روی بخش قبلی بنا شده و هیچ مرحله‌ای جهش ندارد.</p>
+
+  <table>
+    <tr><th>Part</th><th>عنوان</th><th>سلول‌ها</th><th>هدف آموزشی</th></tr>
+    <tr><td><strong>0</strong></td><td>Setup & Data Loading</td><td>0–6</td><td>بارگذاری خروجی نوت‌بوک Preprocessing + آشنایی با ساختار داده</td></tr>
+    <tr><td><strong>1</strong></td><td>TF-IDF Theory</td><td>7–23</td><td>ساخت TF-IDF <strong>از صفر</strong> + تأیید با sklearn</td></tr>
+    <tr><td><strong>2</strong></td><td>Medical Stopwords</td><td>24–34</td><td>سیستم ۳ لایه stopword + ساخت دو variant (baseline/medical)</td></tr>
+    <tr><td><strong>3</strong></td><td>Doctor Corpus</td><td>35–37</td><td>الحاق نظرات → سند سطح دکتر (هر دو variant)</td></tr>
+    <tr><td><strong>4</strong></td><td>TF-IDF Index</td><td>38–41</td><td>ساخت دو ایندکس + بررسی کلیدواژه‌ها</td></tr>
+    <tr><td><strong>5</strong></td><td>Query Preprocessing</td><td>42–44</td><td>پایپلاین پیش‌پردازش کوئری (مطابق corpus)</td></tr>
+    <tr><td><strong>6</strong></td><td>Retrieval</td><td>45–48</td><td>جستجوی cosine similarity + دمو روی کوئری‌های واقعی</td></tr>
+    <tr><td><strong>7</strong></td><td>Reranking</td><td>49–53</td><td>بازرتبه‌بندی با نرخ توصیه + Bayesian smoothing</td></tr>
+    <tr><td><strong>8</strong></td><td>Holdout Evaluation</td><td>54–57</td><td>ارزیابی کمّی: Recall@K, MRR</td></tr>
+    <tr><td><strong>9</strong></td><td>Test Suite</td><td>58–61</td><td>تست کیفی ۳۲ کوئری + OOV analysis</td></tr>
+    <tr><td><strong>10</strong></td><td>Summary</td><td>62</td><td>خلاصه + محدودیت‌ها + مسیر آینده</td></tr>
+  </table>
+
+  <div class="box box-ok">
+    <strong>✅ اتصال به نوت‌بوک‌های قبلی</strong>
+    ورودی این نوت‌بوک <strong>خروجی نوت‌بوک Preprocessing</strong> است (<code>comments_for_tfidf_retriever.csv</code>). در EDA قبلاً توزیع داده بررسی شده، بنابراین تکرار EDA نشده و مستقیم به آموزش رفته‌ایم.
+  </div>
+</div>
+
+<!-- ========== PART 0 ========== -->
+<div class="sec">
+  <h2><span class="n">1</span> Part 0: Setup & Data Loading — سلول‌های 0 تا 6</h2>
+
+  <h3>سلول 0 <span class="cell md">Markdown</span> — Cover + Table of Contents</h3>
+  <p>عنوان نوت‌بوک + جدول ۱۱ بخش + توضیح <strong>دو Variant</strong> (Baseline vs Medical). دانشجو از همان ابتدا می‌داند که دو نسخه از رتریور خواهیم ساخت و دلیل هر کدام را می‌فهمد.</p>
+
+  <h3>سلول‌های 1–2 <span class="cell md">Markdown</span> — What is Information Retrieval?</h3>
+  <p>تعریف IR + تفاوت اساسی با database query: <strong>exact match vs semantic relevance</strong>. مثال فارسی و انگلیسی.</p>
+
+  <h3>سلول‌های 3–6 <span class="cell py">Code</span> — Imports + Load Data</h3>
+  <p>بارگذاری <code>comments_for_tfidf_retriever.csv</code> (خروجی Preprocessing) و <code>doctors_raw_canonical.csv</code> (متادیتا). ساخت <code>name_map</code> و <code>specialty_map</code> برای نمایش نتایج.</p>
+</div>
+
+<!-- ========== PART 1 ========== -->
+<div class="sec">
+  <h2><span class="n">2</span> Part 1: TF-IDF Theory — سلول‌های 7 تا 23</h2>
+
+  <div class="box box-info">
+    <strong>💡 رویکرد آموزشی: اول دستی، بعد کتابخانه</strong>
+    در این بخش TF-IDF روی یک corpus کوچک ۴ جمله‌ای فارسی <strong>به‌صورت دستی</strong> محاسبه می‌شود. سپس با sklearn تأیید می‌شود. این رویکرد تضمین می‌کند دانشجو <strong>ریاضیات پشت الگوریتم</strong> را می‌فهمد، نه فقط API.
+  </div>
+
+  <h3>سلول 7 <span class="cell md">Markdown</span> — مقدمه</h3>
+  <p>معرفی TF-IDF به‌عنوان یکی از پایه‌ای‌ترین روش‌های IR (از دهه ۱۹۷۰). سه هدف این بخش.</p>
+
+  <h3>سلول 8 <span class="cell md">Markdown</span> — 1.1 The Core Problem</h3>
+  <p>فرمول‌بندی مسئله: تابعی که متن را به بردار عددی تبدیل کند. نوتیشن ریاضی: $f: \text{text} \to \mathbb{R}^{|V|}$. مثال ۳ دکتر با query «سنگ کلیه».</p>
+
+  <h3>سلول 9–10 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — 1.2 Term Frequency</h3>
+  <p>فرمول TF + محاسبه دستی روی ۴ سند. خروجی: ماتریس TF به‌صورت DataFrame.</p>
+
+  <h3>سلول 11 <span class="cell md">Markdown</span> — Problem with Raw TF</h3>
+  <p><strong>دو ضعف بنیادی</strong> raw TF: (1) document length bias (2) عدم تمایز بین کلمات رایج و نادر. این بخش <strong>انگیزه</strong> معرفی IDF را ایجاد می‌کند.</p>
+
+  <h3>سلول 12–13 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — 1.3 IDF</h3>
+  <p>فرمول smooth IDF (همان فرمول sklearn) + توضیح نقش لگاریتم + smoothing. محاسبه دستی + نمایش informative vs non-informative terms.</p>
+
+  <h3>سلول 14–15 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — 1.4 TF × IDF</h3>
+  <p>ضرب دو مؤلفه + ماتریس TF-IDF. ۳ سطح scoring: rare+relevant → high, common → moderate, absent → zero.</p>
+
+  <h3>سلول 16–17 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — 1.5 Sublinear TF</h3>
+  <p>فرمول $1 + \log(\text{tf})$ + جدول compression ratio + نمودار مقایسه. <strong>چرا مهم</strong>: دکترهای پرنظر بدون sublinear TF نتایج را dominate می‌کنند.</p>
+
+  <h3>سلول 18–19 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — 1.6 L2 Norm + Cosine Sim</h3>
+  <p>فرمول L2 + فرمول cosine + <strong>چرا cosine بهتر از Euclidean</strong> (direction vs magnitude). محاسبه دستی query «سنگ کلیه» → ranking ۴ سند.</p>
+
+  <h3>سلول 20–21 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — 1.7 Verification</h3>
+  <p>sklearn <code>TfidfVectorizer</code> → <strong>مقایسه عدد به عدد</strong> با محاسبه دستی → ✓ Match.</p>
+
+  <h3>سلول 22–23 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — 1.8 Bigrams</h3>
+  <p>چرا unigram کافی نیست: «سنگ صفرا» ≠ «سنگ کلیه». دمو: unigram vs bigram scoring.</p>
+
+  <div class="box box-ok">
+    <strong>✅ در پایان Part 1، دانشجو:</strong>
+    TF-IDF را از صفر ساخته، با sklearn تأیید کرده، و می‌داند چرا sublinear TF، L2 norm، و bigram لازم‌اند.
+  </div>
+</div>
+
+<!-- ========== PART 2 ========== -->
+<div class="sec">
+  <h2><span class="n">3</span> Part 2: Medical Stopwords Pipeline — سلول‌های 24 تا 34</h2>
+
+  <h3>سلول 24 <span class="cell md">Markdown</span> — Why Domain-Specific Stopwords?</h3>
+  <p>مشکل: «عالی» در ۱۵,۰۰۰+ نظر → نویز. معماری ۳ لایه: <strong>Seed → Auto-discovery → Safety Guards</strong>.</p>
+
+  <h3>سلول 25–26 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — Layer 1: Seed</h3>
+  <p>جدول ۶ دسته‌ای (praise, thanks, doctor address, clinic ops, behavioral, fillers) + <strong>دلیل حذف هر دسته</strong>. کد: ۶۰ کلمه seed.</p>
+
+  <h3>سلول 27–28 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — Bigram Stopwords</h3>
+  <p>جدول مقایسه: «فوق العاده» (ستایش) vs «فوق تخصص» (پزشکی). <strong>فقط به‌صورت جفتی حذف شوند</strong>.</p>
+
+  <h3>سلول 29–30 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — Safety Guards</h3>
+  <p><code>HIGH_RISK_KEEP</code> (درد, درمان, تشخیص, ...) + <code>ALLOWLIST_LATIN</code> (mri, hpv, acl, ...). ساخت effective set = seed − guards.</p>
+
+  <h3>سلول 31–32 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — Filter Function</h3>
+  <p>الگوریتم ۴ قانونه (Latin→keep, bigram→remove, unigram→remove, default→keep). دمو: «دکتر عالی ... درد کمر mri ... فوق العاده» → «درد کمر mri».</p>
+
+  <h3>سلول 33–34 <span class="cell md">Markdown</span> + <span class="cell py">Code</span> — Apply Filter</h3>
+  <p>ساخت دو ستون: <code>text_baseline</code> و <code>text_medical</code>. آمار: چند نظر بعد از فیلتر خالی شدند.</p>
+
+  <div class="box box-ok">
+    <strong>✅ در پایان Part 2، دانشجو:</strong>
+    سیستم ۳ لایه stopword را فهمیده، فیلتر را پیاده کرده، و <strong>دو variant متنی</strong> برای هر نظر دارد.
+  </div>
+</div>
+
+<!-- ========== PART 3 ========== -->
+<div class="sec">
+  <h2><span class="n">4</span> Part 3: Doctor Corpus — سلول‌های 35 تا 37</h2>
+
+  <h3>سلول 35 <span class="cell md">Markdown</span> — Why Doctor-Level?</h3>
+  <p>۳ دلیل: (1) واژگان غنی‌تر (2) عملکرد بهتر TF-IDF روی اسناد بلندتر (3) بازیابی مستقیم دکتر.</p>
+
+  <h3>سلول 36–37 <span class="cell py">Code</span> — Build + Compare</h3>
+  <p>تابع <code>build_doctor_documents()</code> → اجرا روی هر دو variant. نمودار مقایسه token/doctor + درصد کاهش توکن بعد از فیلتر medical.</p>
+</div>
+
+<!-- ========== PART 4 ========== -->
+<div class="sec">
+  <h2><span class="n">5</span> Part 4: TF-IDF Index — سلول‌های 38 تا 41</h2>
+
+  <h3>سلول 38 <span class="cell md">Markdown</span> — Parameter Table</h3>
+  <p>جدول ۷ پارامتر <code>TfidfVectorizer</code> + <strong>دلیل هر انتخاب</strong> (min_df=2: حذف typo, max_df=0.95: حذف عمومی, ...).</p>
+
+  <h3>سلول 39 <span class="cell py">Code</span> — Build Both Indexes</h3>
+  <p>تابع <code>build_tfidf_index()</code> → اجرا روی baseline و medical. خروجی: shape ماتریس + sparsity + nnz.</p>
+
+  <h3>سلول 40 <span class="cell py">Code</span> — Verify Keywords</h3>
+  <p>Top-10 keywords هر دکتر در هر دو variant → <strong>اثبات اینکه ایندکس تخصص را درست گرفته</strong>.</p>
+
+  <h3>سلول 41 <span class="cell py">Code</span> — Save</h3>
+  <p>ذخیره دو ایندکس <code>.joblib</code>.</p>
+</div>
+
+<!-- ========== PART 5 ========== -->
+<div class="sec">
+  <h2><span class="n">6</span> Part 5: Query Preprocessing — سلول‌های 42 تا 44</h2>
+
+  <h3>سلول 42 <span class="cell md">Markdown</span> — The Golden Rule of IR</h3>
+  <p><strong>کوئری باید دقیقاً همان pipeline corpus را بگذراند.</strong> پایپلاین ۹ مرحله‌ای + توضیح حفظ negation words (نه، نیست، نمی، ...).</p>
+
+  <h3>سلول 43 <span class="cell py">Code</span> — preprocess_query()</h3>
+  <p>پیاده‌سازی کامل: control chars → digits → Arabic→Persian → hazm normalize → deglue → tokenize → stopwords. دو تابع: <code>preprocess_query()</code> (baseline) و <code>preprocess_query_medical()</code> (+ medical filter).</p>
+
+  <h3>سلول 44 <span class="cell py">Code</span> — Demo</h3>
+  <p>۵ کوئری تست: خروجی baseline vs medical. نشان می‌دهد «دکتر خوب با حوصله» در medical خالی می‌شود (همه stopword‌اند).</p>
+</div>
+
+<!-- ========== PART 6 ========== -->
+<div class="sec">
+  <h2><span class="n">7</span> Part 6: Retrieval — سلول‌های 45 تا 48</h2>
+
+  <h3>سلول 45 <span class="cell md">Markdown</span> — How Retrieval Works</h3>
+  <p>سه مرحله: vectorize → cosine sim → sort. چرا سریع: dot product روی ماتریس sparse.</p>
+
+  <h3>سلول 46 <span class="cell py">Code</span> — retrieve() + display_results()</h3>
+  <p>تابع بازیابی + نمایش نتایج با نام دکتر، تخصص، و کلیدواژه‌ها.</p>
+
+  <h3>سلول 47 <span class="cell py">Code</span> — Clinical Queries → Medical Index</h3>
+  <p>«سنگ کلیه», «دیسک کمر», «ریزش مو» → ۵ نتیجه برتر. بررسی: آیا تخصص‌ها match می‌کنند؟</p>
+
+  <h3>سلول 48 <span class="cell py">Code</span> — Service Queries → Baseline Index</h3>
+  <p>«با حوصله», «بد برخورد» → ۵ نتیجه. نشان می‌دهد چرا <strong>دو variant لازم بود</strong>: این کلمات در Medical حذف شده‌اند.</p>
+</div>
+
+<!-- ========== PART 7 ========== -->
+<div class="sec">
+  <h2><span class="n">8</span> Part 7: Reranking — سلول‌های 49 تا 53</h2>
+
+  <h3>سلول 49 <span class="cell md">Markdown</span> — The Problem + Formula</h3>
+  <p><strong>۳۷ خط توضیح علمی:</strong></p>
+  <ul>
+    <li><strong>مسئله:</strong> Similarity ≠ Quality — دکتری با نظرات منفی مرتبط نباید بالا باشد</li>
+    <li><strong>فرمول:</strong> $\text{final} = \text{sim} \times \text{smooth\_rec} \times \log(1 + \text{support})$</li>
+    <li><strong>Bayesian Smoothing:</strong> چرا Beta(1,1)؟ جدول عددی: 1/1=100% vs 45/50=90% → بعد smoothing: 67% vs 88%</li>
+    <li><strong>log(1+support):</strong> چرا لگاریتمی؟ ۱۰۰ نظر نباید ۵۰× بهتر از ۲ نظر باشد</li>
+  </ul>
+
+  <h3>سلول 50–51 <span class="cell py">Code</span> — Evidence + Matching</h3>
+  <p><code>build_evidence()</code>: هر دکتر → لیست نظرات + آیا rate≥4. <code>comment_matches()</code>: بررسی حضور ترم کوئری (token-boundary safe).</p>
+
+  <h3>سلول 52 <span class="cell py">Code</span> — rerank()</h3>
+  <p>پیاده‌سازی فرمول: شمارش matched/matched_rec → smoothing → final score → مرتب‌سازی.</p>
+
+  <h3>سلول 53 <span class="cell py">Code</span> — Before vs After Demo</h3>
+  <p>جدول مقایسه: sim-only ranking vs reranked ranking. چند position تغییر کرده؟</p>
+</div>
+
+<!-- ========== PART 8 ========== -->
+<div class="sec">
+  <h2><span class="n">9</span> Part 8: Holdout Evaluation — سلول‌های 54 تا 57</h2>
+
+  <h3>سلول 54 <span class="cell md">Markdown</span> — Strategy + Metrics Table</h3>
+  <p>روش holdout: ۸۰/۲۰ split per doctor (حداقل ۵ نظر). جدول ۳ متریک: Recall@K, MRR, Mean Rank + تفسیر هرکدام.</p>
+
+  <h3>سلول 55 <span class="cell py">Code</span> — holdout_eval()</h3>
+  <p>تابع ۴۹ خطی: split → build train index → vectorize test → compute ranks → metrics.</p>
+
+  <h3>سلول 56 <span class="cell py">Code</span> — Run on Both Variants</h3>
+  <p>اجرای ارزیابی روی baseline و medical → جدول مقایسه.</p>
+
+  <h3>سلول 57 <span class="cell py">Code</span> — Bar Chart</h3>
+  <p>نمودار Recall@1/5/10/20: baseline vs medical.</p>
+</div>
+
+<!-- ========== PART 9 ========== -->
+<div class="sec">
+  <h2><span class="n">10</span> Part 9: Test Suite — سلول‌های 58 تا 61</h2>
+
+  <h3>سلول 58 <span class="cell md">Markdown</span> — Why Qualitative Testing?</h3>
+  <p>Recall عددی «چقدر» موفقیت را نشان می‌دهد، نه «چرا» شکست. تست کیفی: OOV، تخصص مطابق، حساسیت به طول کوئری.</p>
+
+  <h3>سلول 59 <span class="cell py">Code</span> — Query Sets</h3>
+  <p>۴ دسته: <span class="tag tag-g">medical</span> (12 کوئری) <span class="tag tag-b">service</span> (6) <span class="tag tag-y">procedures</span> (7) <span class="tag tag-r">two_word_variants</span> (7).</p>
+
+  <h3>سلول 60–61 <span class="cell py">Code</span> — Run + Summary</h3>
+  <p>اجرای تمام کوئری‌ها → جدول: nnz, top1_sim, OOV, تخصص top-1. خلاصه per-category.</p>
+</div>
+
+<!-- ========== PART 10 ========== -->
+<div class="sec">
+  <h2><span class="n">11</span> Part 10: Summary — سلول 62</h2>
+
+  <h3>سلول 62 <span class="cell md">Markdown</span> — What We Built + Limitations + Next</h3>
+
+  <div class="two">
+    <div class="col">
+      <h4>✅ چه ساختیم</h4>
+      <ul style="font-size:13px;">
+        <li>دو ایندکس TF-IDF (baseline + medical)</li>
+        <li>سیستم ۳ لایه stopword</li>
+        <li>Bigram features</li>
+        <li>Bayesian reranking</li>
+        <li>ارزیابی holdout + test suite</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>⚠️ محدودیت‌ها</h4>
+      <ul style="font-size:13px;">
+        <li>No synonym: سردرد ≠ میگرن</li>
+        <li>Exact match only</li>
+        <li>No context: «عمل نکردم» = «عمل کردم»</li>
+      </ul>
+      <p style="font-size:13px; margin-top:8px;">→ <strong>Notebook 4:</strong> Sentiment Analysis (MLP/BERT)</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FLOW ========== -->
+<div class="sec">
+  <h2><span class="n">→</span> جریان آموزشی: از تئوری تا ارزیابی</h2>
+
+  <div class="flow">
+    <div class="flow-node">Part 0: بارگذاری داده از نوت‌بوک Preprocessing</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node hl">Part 1: TF-IDF از صفر (دستی + sklearn verify)</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node">Part 2: Stopword Pipeline → دو variant متنی</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node">Part 3: الحاق نظرات → سند سطح دکتر</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node hl">Part 4: ساخت دو ایندکس TF-IDF (baseline + medical)</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node">Part 5: پیش‌پردازش کوئری (همان pipeline)</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node">Part 6: بازیابی cosine similarity + دمو</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node hl">Part 7: Reranking (sim × recommendation × evidence)</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node ok">Part 8: ارزیابی کمّی — Recall@K, MRR</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node ok">Part 9: تست کیفی — ۳۲ کوئری واقعی</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node">Part 10: خلاصه + مسیر آینده (Notebook 4)</div>
+  </div>
+</div>
+
+<!-- ========== DESIGN DECISIONS ========== -->
+<div class="sec">
+  <h2><span class="n">✓</span> چرا این ترتیب؟ — توجیه طراحی آموزشی</h2>
+
+  <table>
+    <tr><th>تصمیم</th><th>دلیل</th></tr>
+    <tr>
+      <td><strong>TF-IDF دستی قبل از sklearn</strong></td>
+      <td>دانشجو نباید فقط API بلد باشد — باید ریاضیات را بفهمد. محاسبه دستی + verify → اعتماد به فهم.</td>
+    </tr>
+    <tr>
+      <td><strong>Stopwords قبل از ساخت ایندکس</strong></td>
+      <td>دانشجو اول می‌فهمد «چرا» medical variant لازمه، بعد از آن استفاده می‌کند.</td>
+    </tr>
+    <tr>
+      <td><strong>دو variant در تمام مراحل</strong></td>
+      <td>baseline و medical در هر بخش <strong>کنار هم</strong> ساخته و مقایسه می‌شوند — فرق‌شان ملموس می‌شود.</td>
+    </tr>
+    <tr>
+      <td><strong>Rerank قبل از Evaluation</strong></td>
+      <td>دانشجو اول reranking را می‌فهمد و پیاده می‌کند، بعد عملکردش را ارزیابی می‌کند.</td>
+    </tr>
+    <tr>
+      <td><strong>هم Quantitative هم Qualitative</strong></td>
+      <td>Recall@K «چقدر» را نشان می‌دهد، Test Suite «چرا» را. هر دو لازم‌اند.</td>
+    </tr>
+    <tr>
+      <td><strong>بدون تکرار EDA</strong></td>
+      <td>EDA در نوت‌بوک جداگانه انجام شده. تکرار = اتلاف وقت. فقط ارجاع داده‌ایم.</td>
+    </tr>
+    <tr>
+      <td><strong>هر مفهوم جدید = Markdown توضیحی + Code عملی</strong></td>
+      <td>الگوی ثابت: تئوری → فرمول → کد → نتیجه. دانشجو هرگز با کد بدون context مواجه نمی‌شود.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ========== STATS ========== -->
+<div class="sec">
+  <h2><span class="n">📊</span> آمار نوت‌بوک</h2>
+
+  <div class="two">
+    <div class="col">
+      <h4>حجم</h4>
+      <ul style="font-size:13px;">
+        <li><strong>63</strong> سلول (28 Markdown + 35 Code)</li>
+        <li><strong>428</strong> خط توضیحات Markdown</li>
+        <li><strong>476</strong> خط کد Python</li>
+        <li><strong>904</strong> خط مجموع</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>تعامل</h4>
+      <ul style="font-size:13px;">
+        <li>۴ جمله فارسی → TF-IDF دستی</li>
+        <li>۵ کوئری demo → preprocessing</li>
+        <li>۵ کوئری clinical + ۲ service → retrieval</li>
+        <li>۱ کوئری → rerank before/after</li>
+        <li>۳۲ کوئری test suite</li>
+        <li>~۱۰,۰۰۰+ کوئری holdout evaluation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONNECTION ========== -->
+<div class="sec">
+  <h2><span class="n">🔗</span> اتصال به نوت‌بوک‌های قبل و بعد</h2>
+
+  <div class="flow">
+    <div class="flow-node">📊 Notebook 1: EDA — شناخت داده</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-node">🔧 Notebook 2: Preprocessing — پاک‌سازی ۶ مرحله‌ای</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-lbl">خروجی: comments_for_tfidf_retriever.csv</div>
+    <div class="flow-node hl">🔍 Notebook 3: TF-IDF Retriever (این نوت‌بوک)</div>
+    <div class="flow-arr">↓</div>
+    <div class="flow-lbl">خروجی: tfidf_retriever_baseline.joblib + medical.joblib</div>
+    <div class="flow-node">🧠 Notebook 4: Sentiment Analysis (MLP / BERT) — آینده</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center; color:var(--text2); font-size:12px; margin-top:24px; padding:16px;">
+  — Notebook 3 Walkthrough — Ready for Review —
+</div>
+
+</div>
+</body>
+</html>
